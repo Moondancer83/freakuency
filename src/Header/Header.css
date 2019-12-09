@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+
+.header {
+  width: 1100px;
+  height: 280px;
+  margin: 150px auto 20px;
+}
+
+.headercontent {
+  float: left;
+}
+
+.headerlogo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 80px;
+  letter-spacing: 30px;
+  color: #ddd;
+  line-height: 80%;
+  margin-top: -10px;
+  text-transform: none;
+  margin-left: 190px;
+  font-weight: 300;
+}
+
+.headerdesc {
+  margin-left: 170px;
+  width: 570px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  color: #777;
+  line-height: 190%;
+  margin-top: 7px;
+  letter-spacing: 2px;
+  text-align: right;
+}
