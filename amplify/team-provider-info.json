@@ -1,0 +1,15 @@
+{
+    "freaksheat": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-freakseat-freaksheat-155751-authRole",
+            "UnauthRoleArn": "arn:aws:iam::272640448639:role/amplify-freakseat-freaksheat-155751-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::272640448639:role/amplify-freakseat-freaksheat-155751-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-freakseat-freaksheat-155751-deployment",
+            "UnauthRoleName": "amplify-freakseat-freaksheat-155751-unauthRole",
+            "StackName": "amplify-freakseat-freaksheat-155751",
+            "StackId": "arn:aws:cloudformation:eu-west-1:272640448639:stack/amplify-freakseat-freaksheat-155751/4716f3f0-1a94-11ea-be0c-02bb3de2f99e",
+            "AmplifyAppId": "d3hk6k8jiavfjc"
+        }
+    }
+}
