@@ -1,0 +1,4 @@
+aws-exports.js
+react-app-env.d.ts
+serviceWorker.ts
+*.svg
