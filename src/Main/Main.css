@@ -1,0 +1,13 @@
+.wrapper {
+  text-align: left;
+  max-width: 1100px;
+  margin: 15px auto 30px;
+  padding: 25px;
+  color: #000;
+  background-color: #eee;
+  border: 1px solid #777;
+}
+
+.search {
+  float: right;
+}

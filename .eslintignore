@@ -3,3 +3,8 @@ react-app-env.d.ts
 serviceWorker.ts
 *.svg
 *.css
+src/**/*.html
+
+
+# Exceptions
+src/Character/character-info-resource.ts

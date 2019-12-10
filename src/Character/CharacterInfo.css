@@ -1,0 +1,21 @@
+.characterInfo .table {
+  display: table;
+}
+
+.characterInfo .row {
+  display: table-row;
+}
+
+.characterInfo .th, .characterInfo .td {
+  display: table-cell;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.characterInfo .th {
+  font-style: italic;
+}
+
+.characterInfo .td {
+  font-weight: bold;
+}

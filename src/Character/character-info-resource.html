@@ -1,0 +1,3066 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Viewing Profile -> Aegir</title>
+    <meta charset="UTF-8">
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $("[title]").style_my_tooltips();
+            });
+        })(jQuery);
+    </script>
+    <script src="https://kit.fontawesome.com/502e7fe09b.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i,900,900i|Rajdhani:300,400|Montserrat:300,300i,200,200i|Roboto:400,700|Open+Sans:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <script type='text/javascript' src='http://freakuency.b1.jcink.com/uploads/freakuency/skinhez/avatar.js'></script>
+    <script src="http://files.jcink.net/uploads/freakuency/skinhez/modernizr_custom.js"></script>
+
+    <script src="http://files.jcink.net/uploads/freakuency/skinhez/fejlectabs.js"></script>
+    <link rel="shortcut icon" href="http://files.jcink.net/uploads/freakuency/favicon.ico" type="image/x-icon">
+    <script async src="http://files.jcink.net/uploads/freakuency/skinhez/style_my_tooltips.js"></script>
+    <script src="http://files.jcink.net/uploads/freakuency/skinhez/modernizr_custom.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="http://files.jcink.net/uploads/freakuency/skinhez/component.css" />
+    <style type='text/css'>
+        /* ------- POST TEMPLATES ------- */
+
+
+
+
+        .postingtemplate1outer2 {border: 0px solid #ccc; width: 500px;  margin-top: 0px;}
+
+        .postingtemplate1outer {width: 500px; overflow: auto; max-height: 620px;   }
+
+        .postingtemplate1content { font-family: open sans; text-align: justify; padding-right: 8px; font-size: 12px; line-height: 20px; letter-spacing: 0px; text-indent: 10px; color: #000; font-weight: 400;}
+
+        .postingtemplate1content p {text-indent: 15px; }
+
+        .postingtemplate1content i {font-style: none; font-family: vollkorn; font-size: 14px; }
+
+        .postingtemplate1content b {font-family: open sans; font-size: 12px; font-weight: 700; letter-spacing: 0px; color: #222;}
+
+
+
+        /****************************************
+            Görgő
+        *****************************************/
+
+
+        ::-webkit-scrollbar { width: 2px; height: 0px;}
+        ::-webkit-scrollbar-thumb { background-color: #ccc; width: 3px;}
+        ::-webkit-scrollbar-track { background-color: #;width: 3px;}
+
+
+        .postingtemplate1outer::-webkit-scrollbar { width: 2px; height: 0px;}
+        .postingtemplate1outer::-webkit-scrollbar-thumb { background-color: #ddd; width: 2px;}
+        .postingtemplate1outer::-webkit-scrollbar-track { background-color: #eee; width:2px;}
+
+        .code-scroll::-webkit-scrollbar { background-color: #f1f1f1; }
+        .code-scroll::-webkit-scrollbar-thumb { background-color: #eee; }
+
+        #recent-topics::-webkit-scrollbar { width: 2px; height: 0px;}
+        #recent-topics::-webkit-scrollbar-thumb { background-color: #eee; width: 3px;}
+        #recent-topics::-webkit-scrollbar-track { background-color: #eee;width: 3px;}
+
+        .statonlinelist2::-webkit-scrollbar { width: 2px; height: 0px;}
+        .statonlinelist2::-webkit-scrollbar-thumb { background-color: #eee; width: 3px;}
+        .statonlinelist2::-webkit-scrollbar-track { background-color: #eee;width: 3px;}
+        .commimage {
+            background-size: cover;
+            background-position: center center;
+            width: 60px;
+            height: 60px;
+            display: block;
+            border-radius: 50px;
+            margin-left: 370px; margin-bottom: -55px;
+            position: relative;
+        }
+
+        .commbubble {
+            background:#ddd;
+            padding:15px;
+            position:relative;
+            border-radius:5px;
+            color: #111;
+            font-size: 12px;
+            font-family: calibri;
+            width: 250px;
+            margin-left: 50px;
+            margin-bottom: -5px;
+        }
+
+        .commbubble:after {
+            content:"";
+            width:0;
+            height:0;
+            border-top:10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #ddd;
+            right:-10px;
+            position: absolute;
+            top:15px;
+        }
+
+
+
+        .mellekszalcim {
+            font-size: 12px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: roboto;
+            margin: 8px;
+            font-weight: 700;
+        }
+
+        .mellekszalmain {
+            width: 460px;
+            padding: 20px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+
+        .mellekkep {
+            width: 150px;
+            height: 300px;
+            float: right;
+        }
+
+        .mellekszoveg {
+            float: right;
+            width: 280px;
+            height: 280px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .mellekszoveginner {
+            line-height: 130%;
+            padding-right: 5px;
+            text-align: justify;
+            font-size: 13px;
+            font-family: calibri;
+        }
+
+
+        /* ------- POST TEMPLATES VÉGE ------- */
+
+
+
+
+
+
+        /*MODAL BASZÁS CSBTŐL SZERETETTEL*/
+
+
+        .modal-content {display: none;}
+
+        #fade-background {position: fixed;	_position: absolute;	top: 0;	left: 0;	width: 100%;	height: 100%;	background: url('https://files.jcink.net/uploads/freakuency/b93.png') ; ; 	 Background-repeat: repeat-y;    background-size: cover;   background-attachment: fixed; width: 100%; height: 100%; 	background-repeat: no-repeat; 	background-attachment: fixed; 	z-index: 2;}
+
+        #modal-window {	position: fixed;	top: 64px;	left: 50%;	width: 500px; 	background-color: ;	margin: 0 0 0 -250px;	z-index: 3;}
+
+
+        /*ez már nem a modal baszás*/
+
+
+
+        .header { width: 1100px; height: 280px; margin: 150px auto 20px;
+        }
+        .headercontent {float: left;}
+        .headerlogo { font-family: Rajdhani;
+            font-size: 80px;
+            letter-spacing: 30px;
+            color: #ddd;
+            line-height: 80%; margin-top: -10px; text-transform: none;
+            margin-left: 190px;
+            font-weight: 300;
+        }
+
+
+
+        .headerdesc { margin-left: 170px; width: 570px; font-family: roboto; font-size: 11px; color: #777; line-height: 190%;margin-top: 7px; letter-spacing: 2px; text-align: right;
+        }
+        .headerdesc::after {display: block; content: ''; width: 200px; height: 1px; background-color: #2e1822; margin-top: -10px; margin-left: 60px;}
+        .headeruser b {margin-left: 65px; font-weight: 200; display: block;}
+        .headeruser {  margin-left: 0px; color: #aaa; padding: 12px; margin-top: -30px; width: 200px; font-family: roboto; font-size:11px; letter-spacing: 2px; font-weight: 300; margin-bottom: 30px;   z-index: 10;}
+        .headeruseravatarout {float: right;  padding: 5px; border: 1px solid #585e6d; width: 210px; height: 380px; margin-top: -60px;}
+
+        .headeruseravatar {background-image: url('https://files.jcink.net/uploads/freakuency/skinhez/Million_Pieces/ed7e9754-header.png'); background-size: cover;  width: 210px; height: 380px; -webkit-filter: grayscale(100%); overflow: hidden;}
+
+        .headerusername { font-family:  Rajdhani; font-size: 17px; font-weight: 700; color: #3f5253; letter-spacing:0px; border-bottom: 1px solid #283536;  text-transform: lowercase; padding:5px; margin-right: 30px; padding-left: 6px; text-align: right; margin-top: -4px;}
+
+
+        .headerusermenu  {margin-top: 18px; line-height: 150%; font-family: vollkorn; letter-spacing: 0px; color: #aaa; font-size: 14px; }
+
+        .headerusermenu a:link {line-height: 150%; font-family: vollkorn; letter-spacing: 0px; color: #aaa; font-size: 14px; display: inline-block; padding: 2px;}
+
+        .headerusermenuic a:link, .headerusermenuic a:visited {line-height: 150%; letter-spacing: 0px; color: #777; font-size: 15px; display: inline-block; padding: 4px; margin: 5px; border: 1px solid #2e1822;  }
+
+
+
+
+
+
+
+        /****************************************
+            Body Background & Text Style
+        *****************************************/
+
+        body {
+            font-family: roboto;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background-color: #eee;
+            text-align: left;
+
+            background: url('https://files.jcink.net/uploads/freakuency/b93.png') ;
+
+            background-size: cover;
+            background-attachment: fixed;
+
+            min-height:100%;
+        }
+
+        /****************************************
+            Table Styles
+        *****************************************/
+
+        table, tr, td {
+            font-family: calibri;
+            font-size: 1em;
+        }
+
+        /****************************************
+            Board Width
+        *****************************************/
+
+
+        .wrapper {
+            text-align: left;
+            width: 1100px;
+            margin: 15px auto 30px;
+            padding: 25px;
+            padding-top: 0px;
+            color: #000;
+            background-color: #eee;
+            border: 1px solid #777;
+        }
+
+        .innerwrapper { padding: 0; }
+
+        .mm-center {
+            display: table-cell;
+            vertical-align: middle;
+
+        }
+
+
+
+        #s-m-t-tooltip {
+            max-width: 300px;
+            z-index: 10;
+            margin: 24px 14px 7px 12px;
+            padding: 3px 6px;
+            background: #252525;
+            background: rgba(37,37,37, 0.9);
+            font-family: 'Pavanam', sans-serif;
+            font-size: .9em;
+            line-height: 16px;
+            color: #C2C2C2;
+            border: 1px solid #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #backtotop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            z-index: 150;
+            -webkit-transition: all 0.3s ease-in-out;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        #backtotop:hover {
+            -webkit-transition: all 0.3s ease-in-out;
+            opacity: 1; }
+
+
+        #backtotop a:link,
+        #backtotop a:visited {
+            color:#fff;
+            font-size: 20px;}
+
+
+
+
+
+
+
+
+        .who {text-transform: lowercase;  font-family: calibri; width: 300px; padding: 5px; text-align:justify; font-size:12px; letter-spacing:0px; line-height:110%; margin-bottom:12px; }
+
+        .profieldtitle {padding:12px; font-family: vollkorn; text-transform: uppercase; width:90px; background-color:#111; color: #adadad; font-size: 8px; letter-spacing: 2px; margin-left:3px; text-align:right;}
+
+        .profieldcont {padding:9px; font-family: lora; text-transform: lowercase; font-size: 12px; width:290px; background-color:#fff; color: #222; margin-left:-5px;  font-style: italic; border-bottom: solid 2px #111; height:14px;}
+
+        .profieldic {width: 102px; height: 102px; padding: 5px; background-color:#fbfbfb;  margin-left:3px; border: solid 1px #eaeaea;}
+        .profieldic img {width: 100px; height: 100px;}
+        .profieldic2 {width: 70px; height: 70px; padding: 20px; background-color:#fbfbfb;  color: #eaeaea; margin-left:3px;border: solid 1px #eaeaea;}
+
+        .whofonix {font-style:italic; color:#049fa5;  text-align:right; width: 150px; padding-right:8px; font-style:italic; font-family: lora;     filter: brightness(50%); }
+        .whodemon {font-style:italic; color:#c9281b; text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whosarkany {font-style:italic; color:#c79225;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whonimfa {font-style:italic; color:#128510;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whoember {font-style:italic; color:#92258b;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whovadasz {font-style:italic; color:#42628d;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whoboszi {font-style:italic; color:#8956a1;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .wholiderc {font-style:italic; color:#8c9d01;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whokotelek {font-style:italic; color:#d95700;  text-align:right; width: 150px;padding-right:8px; font-style:italic; font-family: lora;  filter: brightness(50%); }
+        .whohead { width: 300px;   background: #000;
+            color: #fff;
+            font-size: 10px;
+            font-style: none;
+            letter-spacing: 1px;
+            line-height: 95%;
+            font-family: vollkorn, serif;
+            padding: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin:3px;
+            font-weight:lighter;}
+
+
+        /****************************************
+            Link colors
+        *****************************************/
+
+        a:link, a:visited, a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /**************************************************
+            Userlinks for Members and Guests
+        ***************************************************/
+
+        #userlinks { display: none }
+        .mcp-0, .acp-0, .m-2 { display: none; } .g-2 { display: block !important; }
+
+
+
+
+
+        /****************************************
+            Banner
+        *****************************************/
+
+        #logostrip { display: none; }
+
+
+
+        /****************************************
+         Navigation Bar / Submenu
+        *****************************************/
+
+        #submenu  {display:none;}
+
+        #navi {font-family: Rajdhani;    margin: 0px auto 0px;
+            padding: 10px; z-index: 999;   background-color: #; width: 1100px;  }
+        #navi br {
+            display: none;
+        }
+
+        #navstrip  { color:#999;
+            font:12px 'vollkorn'; letter-spacing:2px; text-transform:uppercase;
+            padding-top: 0px; line-height:7px;
+
+        }
+
+        #navstrip a {color:#999; font:11px 'Rajdhani'; margin:0px 5px; letter-spacing:2px; font-weight:normal; padding-top:3px; }
+
+
+        /****************************************
+         saját topicos izé
+        *****************************************/
+
+        .topicsubtitle {
+            height: 10px;
+            margin-top: 15px;
+            text-align: center;
+            letter-spacing: 4px;
+            font-family: calibri;
+            text-transform: uppercase;
+            color: #222;
+            font-size: 8px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        .topicouter {
+            padding: 20px;
+            background-color: #eee;
+            height: 85px;
+            border-bottom: 1px solid #ddd;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .topicmacro {
+            margin-top: 15px;
+            float: left;
+            margin-left: 20px;
+            font-size: 16px;
+            opacity: 0.7;
+
+        }
+
+        .topicmain {
+            margin-left: 70px;
+            float: left;
+            width: 470px;
+            opacity: 1;
+        }
+
+
+        .topicdetails {
+            font-size: 10px;
+            font-family: Montserrat;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #111;
+            float: left;
+            text-align: right;
+            margin-left: -30px;
+            margin-top: 0px;
+            width: 500px;
+            -webkit-filter: grayscale(100%);
+            line-height: 150%;
+        }
+
+        .topicdetails b {
+            font-family: roboto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 11px;
+            color: #555;
+
+        }
+
+        .topicdetails i {
+
+        }
+
+        .topictitle b {
+            font-family: montserrat;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 300;
+            font-size: 13px;
+            height: 20px;
+            color: #111;
+            margin-right: 15px;
+        }
+
+        .topictitle {
+            width: 400px;
+            height: 20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .topicposter {
+            margin-top: 8px;
+            font-family: calibri;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #363636;
+            font-weight: 300;
+        }
+        .topicmod {
+            float: left;
+        }
+
+        /****************************************
+         saját fórumos izé (főoldal)
+        *****************************************/
+
+
+        .maintitle {
+            font-family: rajdhani;
+            color: #111;
+            padding: 10px 5px 5px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 8px;
+            font-size: 13px;
+
+            background-color: ;
+            font-weight: 700;
+            font-style: normal;
+            margin-top: 30px;
+            margin-right: 50px;
+
+        }
+
+        .maintitle a:link, .maintitle a:hover, .maintitle a:visited {display: inline-block; border-bottom: 0px solid #5c3446; font-family: roboto; padding: 10px 15px; color: #5c3446; font-weight: 400; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; text-align: center; margin-bottom: 10px; letter-spacing: 8px;}
+
+
+
+        .forumcontainer {width: 900px; background-color: #eee; padding:10px; border: 0px solid #777; height: 125px; margin-top: -1px; margin-left:50px;}
+        .forummain {width: 870px; padding: 10px 20px; color:#111; background-color:#eee;  font-family: Montserrat; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; float: left; height: 20px; font-weight: 300; margin-left:20px; padding-bottom: 10px;}
+        .forummain i {font-size: 10px; color: #222 ; font-style: normal; font-weight: 200; letter-spacing: 2px; display: inline-block; width: 200px;padding-left: 15px; float: right; text-align: right;}
+
+        .forummain i:after {display: block; content:''; height: 1px; width: 200px; background-color: #a33d6c; margin-right: 30px; margin-top: 10px;}
+        .forumtopic {width: 380px; padding-right: 20px; background-color:#eee; color:#444;  float: right; height: 60px; text-align: right; font-size: 10px; font-family: vollkorn; text-transform: uppercase; padding-top: 15px;}
+        .forumtopic i {font-size: 15px;display: inline-block;text-transform: lowercase; font-family: vollkorn; font-weight:400; margin-left: 15px; padding-bottom: 3px; margin-bottom: 8px; letter-spacing: 0px; color:#111;}
+        .forumtopic b {font-size: 11px;display: inline-block; padding-right: 15px;  letter-spacing: 1px; font-family: calibri; color:#111; font-weight: 300;}
+        .forumdesc {padding-left: 20px; padding-bottom: 20px;font-family: calibri; font-size: 12px; text-transform: lowercase;  letter-spacing: 0px; margin-left:20px; margin-top: 15px; width: 550px; line-height: 180%;}
+        .forumrowfrc1{width: 600px; font-weight: 300;}
+
+        .forumquick {
+            display: inline-block;
+            padding: 4px;
+            text-decoration: none;
+            font-family: roboto;
+            text-transform: uppercase;
+            height: 12px;
+            margin-top: 5px;
+            border-bottom: 1px solid rgba(132,79,42,0);
+            color: #a33d6c;
+            background-color: transparent;
+            padding: 5px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 9px;
+            border: 0px;
+            margin-right: 3px;
+
+
+        }
+
+        .forumquick a:link, .forumquick a:visited {
+
+            color: #a33d6c;
+
+        }
+
+
+
+        .forumdetails {
+            float: left;
+            width: 290px;
+            padding-left: 10px;
+            text-align: right;
+            font-family: vollkorn;
+            font-size: 10px;
+            letter-spacing: 1px;
+            line-height: 12px;
+            color: #363636;
+            text-transform: uppercase;
+            padding-top: 3px;
+        }
+
+        .forumdetailstitle a:link, .forumdetailstitle a:visited, .forumdetailstitle a:hover {
+            color: #822525;
+            letter-spacing: 1px;
+            font-family:vollkorn;
+            display: inline-block;
+            margin-bottom: 0px;
+            margin-top: 10px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(156,159,159,0.);
+            overflow: hidden;
+            font-size: 12px;
+            text-overflow: ellipsis;
+
+        }
+
+
+
+        /***********************************
+            Push Sibebar by Merc
+        ************************************/
+
+        #main {
+            position: absolute;
+            top: 0;
+            left: 250px;
+            right: 0;
+            bottom: 0;
+        }
+
+        #content {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #top {
+            position: fixed;
+            _position: relative;
+            width: calc(100% - 30px);
+            padding: 0px;
+            line-height: 0px;
+            height: 0px;
+            text-transform: uppercase;
+            color: #fff;
+            left: 0px;
+            z-index: 9999;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        #top:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        #top a:link, #top a:visited  {color: #111;}
+        #top a:hover {color: #111; font-weight: normal;}
+
+        .burger {
+            position:absolute;top:100px;left:14px;height:calc(100vh - 200px);width:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;z-index:1100; color: #ddd; letter-spacing: 10px; border-right: 1px solid #283536;
+        }
+
+        .mm-centerr {
+        }
+
+        #push-menu {
+            position: fixed;
+            top: 12px;
+            left: 35px;
+            width: 230px;
+            height: 100%;
+        }
+
+        .pushed-cbox {
+            width: 230px;
+            margin: 10px 5px;
+            padding:8px;
+            background-color: rgba(11,11,11,.0);
+        }
+
+        .small-menu #main {
+            left: 00;
+        }
+
+        .small-menu #push-menu {
+            left: -270px;
+        }
+
+        #main,
+        #push-menu {
+            transition: all 0.15s linear;
+        }
+
+
+
+        .pformstrip.level, .row4.level, .pformstrip.photo, .row2.photo, .pformstrip.email, .row2.email {display: none;}
+
+        .pformstrip.name, .pformstrip.group, .pformstrip.joined, .pformstrip.posts {color: #363636; background-color: #eee; font-size: 10px; text-align: center; text-transform: uppercase; letter-spacing: 4px; border-bottom: 1px solid #999;}
+        .row4.name {color: ; background-color: #eee;  font-family: vollkorn;   font-size: 12px;   font-weight: 500;
+            text-transform: uppercase; letter-spacing: 2px;}
+        .row2.group, .row4.joined, .row4.posts {color: ; background-color: #eee;;  font-size: 11px;text-transform: uppercase; font-family: vollkorn; padding-top: 9px;}
+
+        #member-list > pagination {}
+
+
+        /****************************************
+
+         saját postos izé (miniprofil, etc)
+
+        *****************************************/
+
+
+        .tprofileheadouter {
+            background: transparent;
+            width: 1096px;
+            font-family: vollkorn, arial, sans-serif;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding-top: 0px;
+            border: 1px solid #777;
+
+            padding-bottom: 0px;
+        }
+
+        .tprofilehead {
+            padding: 15px;
+            margin-top: 10px;
+            position: relative;
+            width: 1035px;
+            background-color: rgba(25,20,39,0.0);
+            height: 60px;
+        }
+
+
+
+
+        .tprofileheadname a:link, .tprofileheadname a:hover, .tprofileheadname a:visited {
+            font-family: Rajdhani;
+            font-size: 18px;
+            color: #222;
+            letter-spacing: 4px;
+
+        }
+
+        .tprofileheadname {display: block; border: 0px solid #333; float: left; font-family: vollkorn; padding: 10px 15px; color: #222; font-weight: 700; font-size: 18px; letter-spacing: 5px; text-transform: uppercase; margin-left: 45px;}
+
+        .tprofileheaddetails {
+            margin-top: 10px;
+            color: #aaa;
+            font-family: vollkorn;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-left: 55px;
+
+        }
+
+        .tprofileheaddetails b {
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+            padding-bottom: 3px;
+            border-bottom:1px solid #333;
+            font-weight:400;
+            font-size: 9px;
+        }
+
+        .tprofileimg {
+            width: 70px;
+            height: 70px;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position: center;
+
+        }
+
+        .tprofileimgouter {
+            padding: 5px;
+            border: 1px solid rgba(156,159,159,0.2);
+            float: right;
+            margin-left: 15px;
+
+        }
+
+        .tpost { padding: 0px; width: 845px; vertical-align: 0px; border: 1px solid #777;  margin-bottom: -2px; font-size: 14px; min-height: 440px; padding-bottom: 40px; padding-top: 30px; margin-top: -4px; background-color: #eee; margin-left: -2px;}
+
+        .tpost a:link, .tpost a:visited {color: inherit;}
+
+        .tprofileoptionscont {margin-left: -2px; margin-top: 2px;}
+
+        .tprofileoptions {text-align: right; float: right;  width: 30%;  height: 16px; padding-top: 2px; padding-bottom: 10px; letter-spacing: 1px; color: #555; font-family: roboto; font-size: 14px; text-transform: uppercase;}
+
+        .tprofileoptions a:link {display: inline-block; padding: 4px; margin-right: 7px;}
+        .tprofileoptions b {font-size: 9px; font-weight: 300; letter-spacing: 1px;}
+
+        .tpostdate {float: left; color: #555; text-transform: uppercase; letter-spacing: 1px; width: 65%;  height: 16px; padding-top: 7px; padding-bottom: 5px; font-family: vollkorn; font-size: 9px; font-weight: 700; margin-left: 12px;}
+
+
+
+
+        .miniprofilcontainer { margin-top: -1px;height: 400px; width: 250px; border: 1px solid #777; position: relative; color: #eee;}
+        .miniprofilimage {  display: block;  height: 400px; width: 250px;}
+        .miniprofiloverlay {  position: absolute;  bottom: 0;  left: 0;  right: 0;  overflow: hidden;  width: 200px; height: 350px;  transition: .5s ease; border: 25px solid  rgba(255,255,255,0); opacity: 0; color: #333;}
+        .miniprofilcontainer:hover .miniprofiloverlay {height: 350px;  padding-top: 0px;  transition: .5s ease; background-color: rgba(255,255,255,.9); opacity: 1;}
+        .miniprofiloverlay a:link {color: #333; text-decoration: none;}
+        .miniprofilmaintext { position: relative; right: 0; bottom:0;  color: #333; font-size: 13px; text-transform: uppercase; font-family: vollkorn; letter-spacing: 0px; text-align: center; font-weight: 900; padding: 8px;}
+        .miniprofilawards { padding-top: 5px; padding-bottom: 5px; width: 250p;x; color: #333; font-size: 0px; text-transform: uppercase; font-family: vollkorn; letter-spacing: 4px; text-align: center; font-weight: bold; height: auto; overflow: hidden; transition: .5s ease; opacity: 0.7; letter-spacing: 2px;   filter: brightness(120%);}
+        .miniprofilawards:hover {height: auto; opacity: 0.7; transition: .5s ease;}
+        .miniprofilawards img {   filter: brightness(120%); opacity: 0.5; transition: .5s ease; border-bottom: 3px solid #050505; display: none;}
+        .miniprofilnumberscontainer {display: inline-block; color: #555; width: 15px; height: 10px;  font-size: 13px; text-align: center; padding: 10px; margin: 5px; paddng-top:16px;  transition: .5s ease; bottom: 0px; position: relative;}
+        .minicont {  padding: 0; margin-top:0px; border-collapse: collapse; background-color: #eee; height: auto; width: 130px; }
+        .miniprofiledetails {width: 180px; font-family: roboto; font-size: 11px; text-align: left; margin-top: 15px; line-height: 20px; letter-spacing: 0px;}
+        .miniprofiledetails b {color: #444;  padding-right: 10px; display: inline-block; width: 13px; font-size: 13px; text-align: left;}
+        .miniicon {padding: 8px; border: 1px #777 solid; width: 80px;    height: 80px;  margin: 20px; margin-top: 10px;}
+        .miniiconcont { float: left; width: 80px;    height: 80px;    filter: grayscale(100%);    background-repeat: no-repeat;    background-size: cover;    background-position: center; }
+
+
+        .goto-firstunread {display: none;}
+
+        /**********************************************
+         Input buttons, e.g. submit, text input, etc
+        ***********************************************/
+
+        .button-large {
+            padding:3px 10px; margin:3px; text-align:center; font:10px 'rajdhani'; text-transform:uppercase;
+            color: #444; letter-spacing: 2px;
+            display: inline-block;  font-weight: 700;}
+
+
+
+        .button-large3 {border-top: 2px solid #fbfbfb;
+            padding:3px 10px; margin:3px; text-align:center; font:11px 'rajdhani'; text-transform:uppercase;
+            color: #032d1e; letter-spacing: 1px;
+            display: inline-block;transition-duration: 0.7s;  -o-transition-duration: 0.7s; -moz-transition-duration: 0.7s; -webkit-transition-duration: 0.7s;
+        }
+
+        .button-large2 {border: 1px solid #032d1e;
+            padding:3px 10px; margin:2px; margin-bottom:12px; text-align:center; font:11px 'rajdhani'; text-transform:uppercase;
+            color: #b7b7b7; letter-spacing: 1px;transition-duration: 0.7s;  -o-transition-duration: 0.7s; -moz-transition-duration: 0.7s; -webkit-transition-duration: 0.7s;
+            display: inline-block; background-color: #000;}
+        .button-large2:hover {background-color: #032d1e; color:#fbfbfb;transition-duration: 0.7s;  -o-transition-duration: 0.7s; -moz-transition-duration: 0.7s; -webkit-transition-duration: 0.7s;}
+
+
+
+        .post-buttons-top { margin-top: 3px; }
+
+        .button-large.closed {
+            background: url(http://files.b1.jcink.com/themes/default/white-gradient.png);
+            padding: 7px 12px;
+            text-align:center;
+            margin:0px 5px 0px 5px;
+            border: 1px solid #d8d8d8;
+            color: #660000;
+            font-weight: bold;
+        }
+
+        #top .forminput {font-size: 10px; font-family: vollkorn; text-transform: uppercase;}
+        .pformstrip .forminput, .pformright .forminput { border:  rgba(210,210,210,0.5) 1px solid; background-color: #eee; color: #363636; }
+
+        td .textinput, td .forminput { border:  rgba(79,75,72,0.8) 1px solid; background-color: #eee;
+            color: #222; }
+
+        .forminput, .codebuttons, .radiobutton, .checkbox {
+            border-radius: 0px;
+            background-color: #eee;
+            border: #c1c1c1 1px solid;
+            color: #363636;
+            font:11px 'calibri'; font-weight: normal;
+            padding: 5px; letter-spacing:2px;
+            vertical-align: middle;
+        }
+
+        select {
+
+            border: 1px solid #111;}
+
+
+        td input[type=submit],td input[type=button],td input[type=reset] {
+            color: #363636; border: rgba(79,75,72,0.6) 1px solid; font:11px 'calibri'; text-transform:uppercase;
+            font-weight: normal; background-color: #822525;
+            margin: 3px;
+            padding: 5px;
+            padding-left: 5px;
+            padding-right: 4px;
+            text-decoration: none;
+            font:11px 'calibri';
+            background-color: rgba(5,6,6,.5);
+        }
+
+        .textinput{
+            border-radius: 0px;
+            border: 0px solid #2c6551;
+            color: #363636;
+            font:11px 'calibri'; font-weight: normal;
+            padding: 6px; letter-spacing:1px;
+            background-color: transparent;
+            vertical-align: middle;}
+
+        input[type=submit], input[type=button], input[type=reset] {
+            color: #363636; border:1px solid #4b4d4f; font:11px 'calibri'; text-transform:uppercase;
+            font-weight: normal; background-color: transparent;
+            margin: 3px;
+            padding: 5px;
+            padding-left: 5px;
+            padding-right: 4px;
+            text-decoration: none;
+            font:11px 'calibri';
+            background-color: #eee;
+        }
+
+
+        td input[type=text], td input[type=submit], td input[type=button], td input[type=reset], td .codebuttons {
+            background-color: #eee;
+            border: #c1c1c1 1px solid;
+            color: #363636;
+            font:11px 'roboto'; font-weight: normal; font:11px 'calibri'; text-transform:uppercase;
+            font-weight: normal;
+            margin: 3px;
+            padding: 6px;
+            padding-left: 5px;
+            padding-right: 4px;
+            text-decoration: none;
+
+
+        }
+
+
+        textarea.textinput {font:13px 'calibri'; letter-spacing:1px; padding:20px; color: #222; line-height:120%;}
+
+        /****************************************
+            Posting Area and Mini-profile
+        *****************************************/
+
+        .postlinksbar {
+            padding: 1px 5px;
+
+            margin-top: 6px;
+            padding: 6px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 3px;
+            display: none;
+            color: #777;
+            background-color: rgba(6,6,11,0.0);
+
+        }
+
+        .postlinksbar a:link {font-size: 8px; font-weight: 300;
+            font-family: vollkorn;}
+
+        .activeuserstrip {
+            margin-top: 0px;
+            padding: 6px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 10px;
+            text-align: center;
+            background-color: rgba(192,192,192,0.0);
+            color: #444;
+        }
+
+        .activeuserstrip a:link,
+        .activeuserstrip a:visited,
+        .activeuserstrip strong {
+            color: #444;
+            font-size: 10px;
+            letter-spacing: 1px;
+            font-family: vollkorn;
+        }
+
+        .postdetails {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+        }
+
+        .postdetails b a {
+            text-decoration: none !important;
+        }
+
+        .normalname { display: none }
+        .postbit { display: none }
+        .unreg { font-size: 1em; font-weight: bold; color: #333; }
+        .signature { text-align: center; padding-bottom: 15px; display: none;}
+
+        .postcolor {
+            font-family: open sans; text-align: justify; padding-right: 8px; font-size: 12px; line-height: 190%; letter-spacing: 1px;  font-color: #111;
+
+        }
+
+        .postcolor p {text-indent: 10px;}
+        .postcolor b { font-weight: 700; letter-spacing: 0px;}
+
+        .tpost .postcolor {
+            padding: 70px;
+            color:#111;}
+
+        .postcolor img {max-width: 500px;}
+
+        .tpost a:link, .tpost .forminput {
+
+            color:#555;}
+
+
+
+
+
+        .post1, .post2{ background-color: #eee; padding: 25px; font-family: vollkorn; font-size: 9px;}
+
+        .post1 b, .post2 b { text-transform: uppercase; letter-spacing: 2px;}
+
+        .post1 .postcolor b, .post2 .postcolor b { text-transform: none; letter-spacing: 2px;}
+
+        /*******************************
+            Pagination e.g. [1],2,3 ...
+        *******************************/
+        .pagination {
+            margin: 10px;
+            padding-bottom: 15px;
+            display: inine-block;
+            height: 20px; font-family: roboto; text-transform: uppercase; font-weight: 300; font-size: 12px; letter-spacing: 1px;}
+
+
+        .pagination_current,
+        .pagination a {
+            padding: 2px 3px;
+
+        }
+
+        .pagination a:link,
+        .pagination a:visited,
+        .pagination a:active {
+            padding-left: 6px;
+            padding-right: 6px;
+            color: #222;
+            text-decoration: none;
+            border: 1px solid #222;
+        }
+
+        .pagination a:hover {
+            background: #ddd;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .pagination .pagination_current {
+            background: #ddd;
+            color: #111;
+            padding-left: 6px;
+            padding-right: 6px;
+            border: 1px solid #585e6d ;
+        }
+
+        .pagination_first,
+        .pagination_last,
+        .pagination_page {
+            background: transparent;
+        }
+
+        .pagination_pagetxt {
+            display: none;
+        }
+
+        /****************************************
+            QUOTE and CODE BBCode boxes
+        *****************************************/
+        #QUOTE-WRAP {width: 400px; margin-bottom:15px;}
+        #QUOTE-WRAP b {font-size:0px;}
+
+        #QUOTE b, #QUOTE i {font-size: 14px; font-family: roboto; }
+        #QUOTE {
+            font-family: calibri;
+            font-size: 12px;
+            padding:23px;
+            font-style: italic;
+            border-top: 1px solid #7c7770;
+        }
+
+
+
+
+        /****************************************
+        CODE AREA CSS
+        *****************************************/
+
+        #CODE  {
+            white-space:normal;
+            font-family: calibri;
+            font-size: 12px;
+            width: 400px;
+            background-color: rgba(212,221,221,.10);
+            padding: 20px;
+            border:1px solid rgba(212,221,221,.60);
+            margin-top:2px;
+            word-break: break-word;
+        }
+
+        .code-scroll {
+            max-height: 180px;
+            overflow: auto;
+            padding-right: 5px;
+        }
+
+
+
+        .code-top {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+
+
+        }
+        .code-highlight {
+            font-size: 9px;
+            font-family: calibri;
+            padding: 4px 6px 2px; margin:0px;
+            text-align: right;
+            text-transform: uppercase;
+            color: #212628;
+            letter-spacing: 1px;
+
+            font-weight: lighter;
+        }
+
+        .code-top .code-title {
+            margin: 3px;
+            font-family: lora;
+            text-transform: lowercase;
+            font-size:10px;
+            letter-spacing: 3px;
+            display: none;
+        }
+
+        .code-toggle {
+            cursor: crosshair;
+        }
+
+        .code-scroll.auto-code {
+            height: auto;
+            max-height: none;
+        }
+
+        #CODE-WRAP.nicole-code { border-collapse: collapse; }
+
+
+        /****************************************
+            UserCP/My Controls styles
+        *****************************************/
+
+        #ucpmenu {
+            line-height: 150%;
+            width: 22%;
+            background-color: #;
+            font-family: vollkorn;
+            color: #363636;
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+
+        #ucpmenu a:link, #ucpmenu a:visited, #ucpcontent a:link, #ucpcontent a:visited {
+            font-weight: normal;
+            color: #777;
+        }
+
+        #ucpmenu p  {
+            padding:2px 5px 6px 9px;
+            margin: 0;
+        }
+
+
+
+
+
+        #ucpcontent {
+            background-color: #;
+            line-height: 150%;
+            width: auto;
+            font-family: vollkorn;
+            color: #666;
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: normal;
+            border-left: 1px solid #555;
+        }
+
+        #ucpcontent p  {
+            padding: 10px;
+            margin: 0;
+            font-family: vollkorn;
+            color: #999;
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+
+
+
+        #ucpmenu .pformstrip {
+            text-transform: uppercase;
+            color: #939eb2;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-family: roboto;
+            font-weight: 700;
+            text-align: center;
+            margin: 8px;
+            border-bottom:1px solid #585e6d;
+        }
+
+
+        #ucpcontent .pformstrip
+        {
+            text-transform: uppercase;
+            color: #939eb2;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-family: roboto;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 15px;
+            border-bottom:1px solid #585e6d;
+
+        }
+
+        #ucpcontent td {
+            padding:10px;
+            font-family: vollkorn;
+            color: #666;
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-weight: normal;
+
+        }
+
+        /****************************************
+            Global general table/div row styles
+        *****************************************/
+
+        .row3,.row4{ background-color: #eee; padding: 2px; }
+        #boardstats .row2 { text-align: center; }
+        .row2 {text-transform: uppercase; letter-spacing: 2px; font-size: 10px; padding: 5px; color: #444;  background-color: #eee; }
+        .darkrow1 {color: #666; }
+        .darkrow2 { color: #666; }
+        td.darkrow2 { display: none; }
+        .darkrow3 { padding: 3px; }
+        .hlight { background-color: #; }
+        .dlight { background-color: #; }
+        .row1 { 	background-color: #eee;; padding: 5px; color: #363636; }
+        .row1 a:link {text-transform: uppercase; font-family: open sans; font-size: 11px; font-weight: 600;}
+
+        /****************************************
+            Table & Div Borders
+        *****************************************/
+
+        .tableborder { border: 0px solid #b6b9bb; padding: 0; margin: 0; }
+        .tablefill { 	padding: 1px;color: #555 }
+        .tablepad { background-color: #eee; padding: 6px; }
+
+        .tablebasic {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .plainborder { background-color: #d5d5d5; }
+
+        /****************************************
+            Form table cell styles, left/right/top
+        *****************************************/
+
+        .pformstrip {
+            background-color:  ;
+            color: #777;
+            font-weight: bold;
+            padding: 2px 5px;
+            margin-top: 1px;
+        }
+
+        .pformleft {
+            background-color:  #fff;
+            font-size: 11px; font-family: vollkorn;
+            padding: 6px;
+            margin-top: 1px;
+            width: 25%;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .pformleftw {
+            background-color:  #fff;
+            padding: 6px;
+            margin-top: 1px;
+            width: 40%;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .pformright {
+            background-color:  #fff;
+            padding: 6px;
+            margin-top: 1px;
+            border-top: 1px solid #ccc;
+        }
+
+        .quick-edit {margin: 30px; margin-left: 60px;}
+
+        #post-icon-options, #upload-files-header, #upload-files {display: none;}
+
+        .pformleft .desc {display: none;}
+
+        /********************************
+            Miscellaneous
+        ********************************/
+
+        #delcookiesrow, #mark-as-read-subto { display: none; }
+
+        /* image tag styles */
+        img        { vertical-align: middle; border: 0 }
+        img.attach { border: 2px outset #555; padding: 2px }
+
+        /* Forum Descriptions */
+        .desc { font-size:11px; color: #999; }
+
+        /* Edited by text */
+        .edit { font-size: 9px }
+
+        /* Topic Macros */
+
+        .wrapmini { float: left; margin-left: 15px; text-transform: uppercase; font-size: 10px; color: #777; display: none;}
+
+        /* Warning CSS */
+        .warngood { color: green }
+        .warnbad  { color: red }
+
+        /* Online users list row */
+        .thin { padding: 5px }
+
+        /* Latest news area */
+        .newstext { display: none }
+
+        /* Highlighted text in search */
+        .searchlite { color: #F00; font-weight: bold; background-color: #FF0; }
+
+
+        /****************************************
+            Mobile-specific Styles
+        *****************************************/
+        #mobile { background-color: #252525;color: #111 }
+        #mobile .maintitle { font-size: 3em;color: #111  }
+        #mobile .touch-area b { text-transform: uppercase; letter-spacing: 1px; font-size: 1.25em;color: #111  }
+        #mobile .touch-area { padding: 10px; font-size: 1em; line-height: 200%;color: #111  }
+        #mobile .touch-area-text { font-size: 1em; letter-spacing: 1px; color: #111 }
+        #mobile .postcolor { font-size: 1.5em; line-height: 125%; padding: 10px;color: #111  }
+        #mobile .darkrow3 { padding: 3px; background: rgba(155,155,155,0.5); color: #111 }
+        #mobile .row4 {padding: 5px}
+
+        #mobile .touch-nav { padding: 16px; text-align: center; font-size: 1.5em; text-transform: uppercase; font-weight: bold; letter-spacing: 2px;color: #111 }
+
+
+        /***********************************
+            Copyright: Removal is against Terms
+        ************************************/
+
+        .copyright {
+            font-size: 10px; line-height: 12px;
+        }
+
+        /****************************************
+            Fallback options - bits of the default skin no longer in use
+        *****************************************/
+
+        /*#userlinks { list-style: none; width: 950px; margin: 0 auto; }
+        #userlinks td { color: #C2C2C2; }
+        #userlinks a { text-decoration: none; padding: 1px; }
+        #userlinks a:hover { text-decoration: none; }*/
+
+
+
+        #photowrap { padding: 6px; }
+        #phototitle { font-size: 2em; border-bottom: 1px solid black;}
+        #photoimg { text-align: center; margin-top: 15px; }
+
+        .opentab { color: #FFF; padding: 8px; float: left; width: auto; background-color: #2A2A2A; margin-top:3px; margin-right:2px; font-size:11px; border: #545454 1px solid;}
+        .closedtab { color: #FFF; padding: 7px; float: left; width: auto; background-color: #2A2A2A; margin-top: 6px; margin-right: 2px; font-size:11px; border-top: #545454 1px solid; border-right: #545454 1px solid; border-left:  #545454 1px solid; }
+        .positiontab { height: 34px; margin-left: 2px; }
+
+        .toplinks a { color: #ffffff; font-size: 11px; text-decoration: none; }
+        .toplinks { margin: 0 11px -37px 0; text-align: right; 	color: transparent; }
+
+        /*#delcookiesrow, #mark-as-read-subto { background-color: #2a2a2a; border: 1px solid #2a2a2a; font-size: 10px; padding: 5px; width: 260px; float: right; margin-top:-3px; padding-left:1px; }
+        #mark-as-read-subto { float: none; padding-top: 3px; }*/
+
+        .titlemedium { font-weight: lighter; color:#444; padding: 2px 6px; margin:0px; 	background-color: rgba(221,221,221,0.1); text-transform: uppercase; letter-spacing: 3px; text-align: center; font-size: 9px;}
+        .titlemedium  a:link, .titlemedium  a:visited, .titlemedium  a:active, .titlemedium b { text-decoration: none; color: #444; }
+
+
+
+        /** PROFIL **/
+
+
+        .profilemaincont {font-family: roboto; padding: 30px 50px; background-color: #eee; width: 647px; margin: 0px auto 0px; height: 340px; float: left; border: solid 1px #666;}
+        .profileheadercont {float: left; width: 620px; margin-bottom: 60px;}
+        .profileheadername {display: block; border: 1px solid #666; float: left; font-family: vollkorn; padding: 10px 15px; color: #222; font-weight: 700; font-size: 18px; letter-spacing: 3px; text-transform: uppercase;}
+
+        .profileheaderdesc {color: #222; float: right; display: block; letter-spacing: 20px; padding: 15 0px; font-size: 15px;}
+
+        .profileavatar {margin: 0px;}
+        .profileavatarcont {border:1px solid #222; border-right: 0px; width: 250px; float: left;}
+        .profiledescriptioncont { padding: 10px 10px; width: 300px; float: left;}
+        .profiledescription b {float: left; color: #5e697b; font-family: vollkorn; letter-spacing: 2px; font-size: 9px; display: block; font-weight: 400; text-transform: uppercase;}
+        .profiledescription i {font-size: 11px; float: right; display: block; letter-spacing: 1px; text-transform: lowercase;}
+        .profileuserhead {display: block; border: 1px solid #222; font-family: vollkorn; padding: 10px 15px; color: #222; font-weight: 700; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; text-align: center; margin-bottom: 25px}
+        .profileuser {width: 200px; float: right; height: 200px;}
+        .profileuserinfo {width: 180px; padding: 5px; float: left; display: block;  font-size: 9px; text-transform: uppercase; line-height: 190%;}
+        .profileuserinfo b {font-size: 10px; font-family: vollkorn; padding-bottom: 0px; float: left; display: block; font-weight: 400; color: #5e697b; text-transform: uppercase;}
+        .profileuserinfo i {float: right; display: block;}
+        .profilequotecont {margin: 0px auto 20px;  height: 100px; width:897px;  background-color: #eee; display: block; float: left;  border: solid 1px #222; border-top: 0px;}
+        .profilequotecontic {   float: left; width: 100px;    height: 100px;    filter: grayscale(100%);    background-repeat: no-repeat;    background-size: cover;    background-position: center; border-bottom: solid 1px #222; border-right: 1px solid #222;
+        }
+        .profilequoteconttext {color: #222; font-family: roboto; text-transform: lowercase;   margin: auto;  position: relative;  top:20px; left: 50px; bottom: 0; right: 0;width: 700px; height: 40px; font-size: 12px; letter-spacing: 2px; line-height: 190%; word-spacing: 5px; text-align: right;}
+
+
+        /** text select colour fun **/
+
+        ::selection {
+            color:#fbfbfb;
+            background: #822525; /* WebKit/Blink Browsers */ }
+
+        ::-moz-selection {
+            color:#fbfbfb;
+            background: #822525; /* Gecko Browsers */ }
+
+
+        .foglalotitleouter {border-top: 1px solid #8d8783; padding: 60px; width: 300px;}
+        .foglalotitle {font-family: calibri; border-bottom: 1px solid #8E5D1A; text-transform: uppercase; letter-spacing: 2px; font-size: 9px; height: 18px; text-align: right; display: inline-block; margin-bottom: 15px;}
+        .foglalocontent {font-family: roboto; font-size: 11px; display: inline-block;  line-height: 19px; text-align: left; max-height: 400px; overflow-y: scroll; width: 300px; }
+
+        .foglalocontent b {font-weight: normal; display: inline-block; text-transform: uppercase; font-family: vollkorn; letter-spacing:2px; text-align: left; font-size: 8px; background-color: #d8d3cd; padding: 3px; line-height: 10px;
+        }
+
+
+        .foglalocontent a:link, .foglalocontent a:visited, .foglalocontent a:hover {font-family: roboto; letter-spacing: 1px; font-size: 9px; color: #333;  display: inline-block; text-align: left; padding-left: 7px; text-transform: uppercase; font-weight: 600;}
+
+
+        .foglalorezervtitle {font-family: roboto; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; height: 23px; text-align: center; margin-top: 55px; font-weight: 600;}
+        .foglalorezervcontent {text-align: left; font-family: calibri; font-size: 11px;  width: 300px;}
+        .foglalorezervcontent b {font-weight: normal; display: inline-block; text-transform: lowercase; font-family: lora; font-style: italic; letter-spacing:1px; text-align: right; font-size: 9px;  }
+
+
+
+        .alap
+        {
+
+            width:700px;
+            font-size: 13px;
+            font-weight: lighter;
+            text-transform: uppercase;
+            line-height: 18px;
+            font-family: calibri;
+            padding-top:30px;
+            padding-bottom:3px;
+            margin-top:0px;
+            align: center;
+            letter-spacing:2px;
+            display: block;
+
+
+        }
+
+        .alapszoveg
+        {
+
+            align: center;
+            background-color: #d3d5e5
+            width: 650px;
+            text-transform: none;
+
+            text-align: justify;
+            margin-left:30px;
+            margin-right:50px;
+            margin-top:10px;
+            letter-spacing: 0px;
+            overflow: auto;
+            padding: 0px;
+        }
+
+        .alapszoveg hr {height: 1px; background-color: #dfdcdc; width:50%; align:center; margin-top:12px, margin-bottom:12px; opacity: 0.2; }
+
+        .ruleshead {color: #776655; font-family: calibri; text-transform: uppercase; font-size:14px; padding-top:15px; font-weight:lighter; font-style:italic; letter-spacing:1px;}
+
+        #inforum-rules {text-align: left; opacity: .9; margin: 20px; font-size: 11px; width: 300px; margin-bottom: 0px;}
+        #inforum-rules b, #inforum-rules img  {font-size: 0px; display: none;}
+
+
+        .alapszoveg i {font-family: calibri;font-weight: 300;font-style:italic;}
+
+        .alapszoveg b, .alapszoveg strong
+        {
+            font-weight:lighter
+            color: #a44c48;
+        }
+
+        .kiemel
+        {
+            color:#2c3c3f ;
+            font-size: 17px;
+            font-style:italic;
+            padding-top:10px;
+            padding-bottom:10px;
+            font-weight:bold;
+            letter-spacing: 0px;
+            font-family: lora;
+
+        }
+
+
+        .elfogadasalap
+        {
+            background: #000;
+            width: 240px;
+            color: #222;
+            font-size: 10px;
+            font-style: unset;
+            letter-spacing: 2px;
+            line-height: 95%;
+            font-family: vollkorn, cursive;
+            padding: 5px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:lighter;
+        }
+
+        .elfogadasszoveg
+        {
+            width: 250px;
+            color:  ;
+            font-size: 12px;
+            line-height: 145%;
+            text-align: justify;
+            position: relative;
+            top: 25px;
+            text-indent: 0px;
+        }
+
+        .etfejlec
+        {background: #;
+            background-position: center;
+            font-weight: 100;
+            line-height: 30px;width: 478px;
+            color: #333;
+            font-style: none;
+            font-family: vollkorn;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-align: center;
+            padding-left: 10px;
+            padding: 10px;
+            border:#777 solid 1px;
+        }
+
+        .etfejlec b
+        {color: #333;
+            font-weight: 500;
+        }
+
+
+        .etszoveg
+        {
+            width: 500px;
+            border-bottom: 0px double #000;
+            color: black;
+            font-size: 14px;
+            line-height: 105%;
+            text-align: justify;
+            position: relative;
+            top: 10px;
+        }
+
+
+        .etszoveg table
+        {
+            font-size: 12px;
+            text-align: justify;
+            margin-bottom:30px;
+        }
+
+        .etjellem
+        {
+            width: 480px;
+            height: 190px;
+            overflow: auto;
+            padding: 5px;
+            border-bottom: 0px double #000;
+            color: black;
+            font-size: 12px;
+            line-height: 105%;
+            text-align: justify;
+            position: relative;
+            top: 10px;
+        }
+
+        .tema
+        {
+            width: 400px;
+            color: white;
+            font-size: 18px;
+            font-style: none;
+            letter-spacing: 1px;
+            line-height: 95%;
+            padding: 20px 10px;
+            text-transform: auto;
+            text-align: center;
+            margin-left: -40px;
+
+        }
+
+
+        /*et baszás*/
+
+
+        /*et baszás*/
+
+        /*et baszás*/
+
+        .tabs {
+            top:-20px;
+            position: relative;
+            width: 500px;
+            height:  480px;
+            text-align:center;
+        }
+
+        .tab {
+            float: left;
+        }
+
+        .tab label {
+            background: #ddd;
+            padding-top:5px;
+            padding-bottom:0px;
+            padding-left:15px;
+            padding-right:15px;
+            border: 1px solid #777;
+            margin-right: 3px;
+            position: relative;
+            left: 55px;
+            font-size:11px;
+            letter-spacing:1px;
+            font-family: calibri; text-transform: uppercase
+        }
+
+        .tab [type=radio] {
+            display: none;
+        }
+
+
+        .embertab {
+            float: left;
+        }
+
+        .embertab label {
+            background: #ddd;
+            padding-top:5px;
+            padding-bottom:0px;
+            padding-left:15px;
+            padding-right:15px;
+            border: 1px solid #777;
+            margin-right: 3px;
+            position: relative;
+            left: 110px;
+            font-size:11px;
+            letter-spacing:1px;
+            font-family: calibri; text-transform: uppercase
+        }
+
+        .embertab [type=radio] {
+            display: none;
+        }
+
+        .content {
+            position: absolute;
+            top: 19px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background: #fafafa;
+            padding: 25px;
+            border: 1px solid #777;
+            text-align:justify;
+            font-size:12px;
+            line-height: 170%;
+
+        }
+
+        .content i {font-size: 12px;}
+        .content a:link  {font-size: 12px!important;}
+        .contentinner {
+            height:400px;
+            overflow-y:auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        [type=radio]:checked ~ label {
+            background: #fafafa;
+            border-bottom: 1px solid #fafafa;
+            z-index: 2;
+        }
+
+        [type=radio]:checked ~ label ~ .content {
+            z-index: 1;
+        }
+
+
+
+
+        form { display: inline; color: #555;}
+
+
+
+        /* MINI PROFILE */
+
+
+
+        .profkepesseg {
+            position: relative;
+            display: inline-block;
+            font-weight:600;
+        }
+
+        .profkepesseg .profkepessegtext {
+            visibility: hidden;
+            width: 320px;
+            background-color: rgba(221,221,221, 0.9);
+            color: #323741;
+            text-align: justify;
+            border-radius: 3px;
+            line-height:120%;
+            padding: 8px 8px;
+            text-transform:none;
+            font-size: 10px;font-weight:normal;
+            font-family: calibri;
+
+
+            /* Position the profkepesseg */
+            position: absolute;
+            z-index: 1;
+            top: 40%;
+            left: 50%;
+            margin-left: 30px;
+        }
+
+        .profkepesseg:hover .profkepessegtext {
+            visibility: visible;
+        }
+
+
+
+
+
+
+
+
+        .timeline  {border-collapse:collapse;border-spacing:0; width:450px;}
+
+        .timeline td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+
+        .timeline th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:11px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal; text-align:justify; font-size:10px;}
+
+        .timeline .tg-34fq{font-weight:lighter;text-align:right; vertical-align: top; font-size:11px;font-family: 'Raleway', sans-serif; letter-spacing:1px; text-transform: uppercase; width:120px;border-right: 2px solid #2c3c3f ;
+        }
+
+        .timeline .tg-031e{text-align:justify; font-size:11px;border-bottom: 1px dotted #706f68;}
+
+
+
+
+        /* szilánkok */
+
+        .szilank {font-family: vollkorn; width: 460px; max-height:380px; overflow-y:scroll; text-align:justify; font-size:13px; letter-spacing:0px; line-height:140%; border: 20px solid transparent; border-right: 10px; padding-right: 7px;}
+        .szilankhead {
+            width: 480px;
+            color: #050505;
+            font-style: none;
+            letter-spacing: 2px;
+            line-height: 95%;
+            font-family: roboto;
+            padding: 10px; font-style: none;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:lighter;
+            font-size: 11px;
+            border-bottom: 1px solid #050505;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        #mobile .szilank  {width:100%;}
+
+        /* minimálos template 1 */
+
+        .custom1 {
+            padding: 25px;
+            width: 450px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 380px;
+            letter-spacing: 0; }
+
+
+        .custom1 .body {
+            background: #f5f5f5;
+            height: 350px;
+            padding: 10px;
+            overflow-y: scroll;
+            font-family: calibri;
+            font-size:13px;
+            color: #262626;
+            text-align: justify;
+            line-height: 130%;
+            border: 1px solid #e3e3e3; }
+
+        .custom1 b {
+            font-weight: 700;
+            color: #080808;
+            letter-spacing:1px;
+            font-family: vollkorn;
+            font-size:12px;}
+
+        /* minimálos template 2 giffel */
+
+        .custom2 {
+            padding: 25px;
+            width: 395px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 100%;
+            letter-spacing: 0;
+        }
+
+        .custom2imgholder {
+            background: #f5f5f5;
+            height: 100%;
+            padding: 10px;
+            border: 3px double #e3e3e3;
+            width:370px;margin-bottom:10px;}
+
+        .custom2 img {
+            -webkit-filter: grayscale(100%);
+            width:365px;
+        }
+
+        .custom2 .body {
+            background: #f5f5f5;
+            height: 300px;
+            padding: 10px;
+            overflow-y: scroll;
+            font-family: calibri;
+            font-size:13px;
+            color: #262626;
+            text-align: justify;
+            line-height: 130%;
+            border: 3px double #e3e3e3;
+        }
+
+        .custom2 b {
+            font-weight: bold;
+            color: #b84630;
+        }
+
+
+        .custom3-body {
+            background: #f5f5f5;
+            padding: 10px;
+            font-family: calibri;
+            font-size:13px;
+            color: #262626;
+            text-align: justify;
+            line-height: 130%;
+            border: 3px double #e3e3e3;
+        }
+
+
+        /* minimálos template 4 */
+
+        .custom4 {
+            padding: 25px;
+            width: 500px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            letter-spacing: 0;
+
+
+        }
+
+
+        .custom4 .body {
+            background: #f5f5f5;
+            height: 450px;
+            padding: 10px;
+            overflow-y: scroll;
+            font-family: calibri;
+            font-size:13px;
+            color: #262626;
+            text-align: justify;
+            line-height: 130%;
+            border: 3px double #e3e3e3;
+        }
+
+        .custom4 .body::first-letter {
+            font-size: 120%;
+            font-family: lora;
+        }
+
+        .custom5-body::first-letter {
+            font-size: 120%;
+            font-family: lora;
+            padding:3px;
+            font-style: italic;
+            font-weight:bold;
+        }
+
+        custom5-body::first-line {
+            line-height:120%;
+        }
+
+        .custom4 b {
+            font-weight: bold;
+            color: #b84630;
+        }
+
+        .custom4 img {
+            border:1px solid #e3e3e3;
+            background-color: #f5f5f5;
+            margin-right:6px;
+            margin-top:1px;
+            margin-bottom:1px;
+            float:left; width:200px;
+            padding:5px;
+        }
+
+        .custom4 .body ::first-letter {
+            font-size:18px;
+        }
+
+        .custom5-body {
+            background: #f5f5f5;
+            padding: 10px;
+            font-family: calibri;
+            font-size:13px;
+            color: #262626;
+            text-align: justify;
+            line-height: 130%;
+            border: 3px double #e3e3e3;
+        }
+
+
+        .mm-stat-ttl {
+            font-family: calibri;
+            padding-top: 40px;
+            padding-bottom: 18px;
+            color: #ddd;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-style: italic;
+            border-bottom: 1px solid #ebebeb;
+
+        }
+
+        .mm-stat-ttl a:link,
+        .mm-stat-ttl a:visited {
+            display: inline-block;
+            padding: 3px;
+            border-bottom: 1px solid #ddd;
+            margin: 2px;
+            color: #222;
+            font-family: vollkorn;
+            letter-spacing: 2px;
+        }
+
+        .mm-stat-ttl a:hover {
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        .statnumbers {
+            text-align: center;
+            color: #222;
+            display: inline-block;
+            font-family: calibri;
+            font-size: 9px;
+            width: 105px;
+            padding: 11px;
+            text-transform: uppercase;
+            border: 1px solid #ddd;
+            margin: 10px;
+            line-height: 110%;
+        }
+
+        .statnumbers b {
+            color: #000;
+            font-family: Rajdhani;
+            font-size: 16px;
+        }
+
+        .welcomelatest {
+            text-align: right;
+            color: #a33d6c;
+            display: inline-block;
+            font-family: calibri;
+            font-size: 10px;
+            width: 310px;
+            padding: 10px;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            text-transform: uppercase;
+            border: 0px solid #ddd;
+            line-height: 130%;
+            letter-spacing: 1px;
+            font-weight: bold;
+            height: 80px;
+            margin-left: 150px;
+        }
+
+
+        .welcomelatest b {
+            color: #333;
+            font-size: 10px;
+            font-family: calibri;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .statonlinelist1 {
+            width: 500px;
+            border: 30px solid #eee;
+            border-top: 5px;
+            text-align: justify;
+            font-family: vollkorn;
+            font-size: 15px;
+            text-transform: lowercase;
+            font-weight: 500;
+            height: 50px; letter-spacing: 1px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            line-height: 100%;
+            -webkit-filter: grayscale(100%);
+            padding-left: 15px;
+            margin-left: 70px;
+        }
+
+        .statonlinelist1header {
+            width: 500px;
+            padding: 5px;
+            text-align: center;
+            font-family: vollkorn;
+            font-size: 0px;
+            text-transform: uppercase;
+            background-color: #;
+            color: #222;
+            letter-spacing: 3px;
+            border-top: 1px solid #aaa;
+            font-style: italic;
+            margin-left: 90px;
+            margin-bottom: 40px;
+        }
+
+        .statonlinelist2 {
+            width: 500px;
+            border: 20px solid #eee;
+            border-top: 5px;
+            text-align: justify;
+            font-family: calibri;
+            font-size: 10px;
+            text-transform: uppercase;
+            height: 70px; letter-spacing: 1px;
+            overflow-y: scroll;
+            -webkit-filter: grayscale(100%);
+            padding-right: 10px;
+            padding-left: 15px;
+            margin-left: 70px;
+        }
+
+        /* recent topics */
+
+
+        #recent-topics.tableborder {width: 340px;  margin-top: 5px; padding:15px; background-color: #eee; height: 260px; overflow-y: scroll; border-top: 8px solid #eee; border-bottom: 8px solid #eee; padding-top: 5px; margin-left: 690px; border-left: 0px solid #ccc;}
+        .row4.recent-topics-info {width:400px;}
+        .row4.recent-topics-date {width:200px;}
+        #recent-topics .recent-topics-info {padding: 1px; width:400px; height: 10px;}
+        #recent-topics .recent-topics-info {font-size: 0px; }
+        #recent-topics .recent-topics-info a strong {font-size: 14px; font-family: rajdhani; font-weight: 700; text-transform: uppercase; color: #0a0a0a; letter-spacing: 1px; padding-left: -5px; line-height: 70%; padding-left: 18px;}
+
+        #recent-topics .recent-topics-info:before {display: inline-block; width: 15px; content: ''; height: 1px; background-color: #a33d6c; margin: 4px;}
+
+        #recent-topics .recent-topics-info a { font-size: 10px; text-transform: uppercase; color: #444; font-family: calibri; letter-spacing: 1px; font-weight: normal; }
+
+        #recent-topics tr {border-bottom: 1px solid #eaeaea; padding: 5px; height: 45px; margin: 8px; }
+        #recent-topics .maintitle {display: none;}
+
+        #recent-topics tr td:nth-child(1) {  width: 400px; text-align: left; height: 10px;}
+        #recent-topics .recent-topics-info a:nth-child(2) { display: block; width: 90%; padding:5px; padding-left: 35px; }
+
+        #recent-topics tr td:nth-child(2) {  text-align: right; letter-spacing: 1px; font-size: 8px; text-transform: uppercase; color: #444; font-family: calibri; display: none;}
+
+
+
+
+
+        /* Karakter adatbázis */
+        .keres {width: 195px; height: 280px; overflow: hidden; }
+        .kereshovtartalom { padding:8px; font-family: Calibri; font-size:11px; width: 179px; height: 246px; background-color: #d7d3ce; margin-top: 0px; overflow-y:scroll; text-align:justify; color:#333;}
+        .kereshovtartalom b { font-weight:bold; font-size:11px; color: #000402; }
+        .kereshov {transition-duration: 1.5s;  -o-transition-duration: 1.5s; -moz-transition-duration: 1.5s; -webkit-transition-duration: 1.5s;padding-bottom:5px;}
+        .keres:hover .kereshov {margin-top:0px;}
+        .kerescim {font-family: vollkorn;font-size: 11px;color: #878787;text-shadow: 2px 2px #000402; margin: 125px auto;transition-duration: .75s; -o-transition-duration: .75s; -moz-transition-duration: .75s; -webkit-transition-duration: .75s;width:160px;height:60px; text-transform:uppercase;letter-spacing:-1px;line-height:90%;}
+        .kerescim b{font-family: vollkorn;font-size: 17px;color: #bababa;text-transform:lowercase;line-height:90%;font-style:italic;}
+        .keres:hover .kerescim{margin-top:-185px;letter-spacing:-1px;}
+        .keresalcim {text-align:center;font-family: Calibri;font-size: 11px;color: #fbfbfb;line-height:110%;padding-bottom:3px;padding-top:3px;background-color:#032d1e;text-transform: lowercase;}
+        .keresalcim a:link {color: #fff; font-weight:bold;}
+        .keresalcim b {color: #2a2a2a;}
+
+        #keresnav button {font-size:11px; text-transform: uppercase; background-color: transparent; border: none; padding:3px; color: #333;}
+
+        #keresnav {  position: fixed; bottom:20px; left: 20px; z-index: 150;-webkit-transition: all 0.7s ease-in-out;opacity: 1; padding:10px; font-family:calibri;font-size:13px;background-color:#212628; color:#555;width:auto;}
+
+
+        #Container { width:832px;    text-align:left;    padding:45px;   }
+        #Container .mix{    display: none;}
+        .mix {    display:inline-block;    margin-right:10px;    margin-top:15px;    width:195px;    -webkit-transition: all 0.4s ease-in-out;    -moz-transition: all 0.4s ease-in-out;    -o-transition: all 0.4s ease-in-out;    -ms-transition: all 0.4s ease-in-out;    transition: all 0.4s ease-in-out;}
+        #Container .img img {    width:70px;}
+        .info {    height:140px;    background-color:#fff;    margin-left:70px;    overflow-y:auto;    padding:10px;    -webkit-transition: all 0.4s ease-in-out;    -moz-transition: all 0.4s ease-in-out;    -o-transition: all 0.4s ease-in-out;    -ms-transition: all 0.4s ease-in-out;    transition: all 0.4s ease-in-out;}
+        .info center {    margin-top:45px;}
+        .info .desc {    visibility:none;    border-top:1px solid #f0f0f0;    padding:5px;    margin-top:100px;    text-align:right;    -webkit-transition: all 0.4s ease-in-out;    -moz-transition: all 0.4s ease-in-out;    -o-transition: all 0.4s ease-in-out;    -ms-transition: all 0.4s ease-in-out;    transition: all 0.4s ease-in-out;}
+        .mix center:hover {    margin-top:5px;}
+        .mix:hover .desc {    visibility:inline;    margin-top:5px;}
+
+        #Container i {    font-size:9px;    display:inline-block;    margin-top:5px;}
+        /* CREDIT */ #c a {    position:fixed;    bottom:10px;    right:10px;    padding:5px 10px;    background-color:#bababa;    font-size:10px;    text-transform:uppercase;    text-decoration:none;    display:block;}
+        /* TOOLTIP */
+
+        #s-m-t-tooltip {    position:absolute;    background-color:#000;    padding:3px 5px 3px;    z-index:9;    margin-top:-30px;    margin-left:-30px;    font-family:'Courier New';
+            display:block;    text-transform:uppercase;    font-size:8px;    color:{color:text};
+
+
+
+    </style><script type='text/javascript' src='//files.jcink.net/html/jquery-1.7.2.min.js'></script>
+    <script type='text/javascript' src='//files.jcink.net/html/jquery.cookie-1.3.1.js'></script>
+
+    <script type='text/javascript' src='//files.jcink.net/html/catcollapse.js'></script>
+
+    <script>
+        // jQuery Modal Popups by Black
+        // http://code.jfbs.net/?showtopic=57
+        $(document).ready(function() {
+            var fadeBackground = $(document.createElement("div")).hide().attr("id", "fade-background"),
+                modalWindow = $(document.createElement("div")).hide().attr("id", "modal-window");
+            $(document.body).append(fadeBackground, modalWindow);
+            $(document).on("click", ".modal-link", function(e) {
+                $("#fade-background").css({ "opacity": "1.0" }).fadeIn("fast");
+                var newContents = $("#" + $(this).data("modal-target")).html();
+                $("#modal-window").html(newContents);
+                $("#modal-window").fadeIn("fast");
+                e.preventDefault();
+            });
+            $(document).on("click", "#fade-background", function() {
+                $("#fade-background").fadeOut("fast");
+                $("#modal-window").fadeOut("fast");
+            });
+            $(document).keypress(function(e) {
+                if(e.keyCode == 27) {
+                    $("#fade-background").fadeOut("fast");
+                    $("#modal-window").fadeOut("fast");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<div id='main'>
+    <div id='top'>
+
+        <div id='push-menu-toggle'>
+            <div class='burger'>
+
+                <div style=" -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari 3-8 */
+  transform: rotate(90deg); "> oldalmenü</div>
+
+            </div>
+        </div>
+        <a href="admin.php" target="_blank" class="acp-0"><span class="mm-lnk-icn" style="font-size: 25px; color: #fff; float: right; margin-top: 8px;"><i class="fa fa-cogs" aria-hidden="true" title="Admin CP"></i></span></a>
+
+
+    </div>
+    <div id='content'>
+
+        <body>
+
+        <div class="header">
+            <div class="headercontent">
+                <div class="headerlogo"><a href="/index.php?act=idx">freakuency</a></div>
+                <div class="headerdesc">
+                    Sok ezer évvel ezelőtt a Földön katasztrófák sora borította fel a természet rendjét és formálta át a bolygót. Így születtek meg a mítoszok ezerarcú teremtményei, akik ma is köztünk élnek.</div></div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="navi"><div id='navstrip' align='left'>&nbsp;<a href='http://freakuency.jcink.net/index.php?act=idx'>freakuency</a>&nbsp;&minus;&nbsp;Viewing Profile</div>
+            <br />
+            <br /></div>
+
+        <div class="wrapper">
+
+
+
+            <div id="gyorslinkek" class="modal-content">
+
+                <div style="font-family: playfair display; font-size: 20px; color: #fff; padding-top: 100px">
+
+
+                    <div style="width: 500px; height: 2px; margin-bottom: 50px; background: #333"></div>
+
+                    <div style="width: 555px; height: 2px; margin-bottom: 50px; background: #333"></div>
+
+                    <div style="width: 530px; height: 2px; margin-bottom: 50px; background: #333"></div>
+
+                    <div style="width: 500px; height: 2px; margin-bottom: 50px; background: #333"></div>
+
+                    <div style="width: 475px; height: 2px; margin-bottom: 50px; background: #333"></div>
+
+                    <div style="width: 505px; height: 2px; margin-bottom: 50px; background: #333"></div>
+
+
+                    <div style="height: 355px; width: 2px; margin-top: -360px; margin-left: 100px; background: #333"></div>
+                    <div style="margin-left: 115px; margin-top: -360px;">
+                        <a href="/index.php?showtopic=5"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff;  line-height: 52px">szabályzat</div></a>
+
+                        <a href="/index.php?act=Pages&pid=2&h=1"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff; line-height: 52px">csoportok</div></a>
+
+                        <a href="/index.php?showforum=6"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff; line-height: 52px">karakteralkotás</div></a>
+
+                        <a href="/index.php?act=Members"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff; line-height: 52px">taglista</div></a>
+
+                        <a href="/index.php?act=Pages&h=1&pid=3"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff;  line-height: 52px">képességek</div></a>
+
+                        <a href="/index.php?act=Pages&h=1&pid=32"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff; line-height: 52px">karakter-adatbázis</div></a>
+
+                        <a href="/index.php?showforum=50"><div style="font-family: playfair display; letter-spacing: 2px; font-weight: bold;  font-size: 20px; color: #fff; line-height: 52px">csoportos plotok</div></a>
+
+
+                    </div>
+
+
+                </div></div>
+
+            <div id="hellokicsim" class="modal-content">
+
+                <div style="font-family: roboto; font-size: 25px; color: #fff; margin-left: -200px; width: 100%">
+
+                    <div style="border-top: 2px solid #939eb2; border-bottom: 1px solid rgba(156,159,159,0.2); padding-bottom: 20px; padding-top: 20px; margin-top: 50px;width: 140%; margin-left: 100px ">
+                        <table><tr><td>
+                            <div style="  margin-left: -100px; font-size: 26px; font-weight: 500; letter-spacing: 2px; color: #fff;line-height: 23px;  text-transform: lowercase;  font-family: roboto slab; text-align: right;">események<br>JÚL. 1-TŐL<br>NOV. 2-IG</div>
+                        </td><td>
+                            <div style="margin-left: 10px;margin-right: 10px; font-size: 100px; font-weight: 100; letter-spacing: 4px; color: #363636; text-transform: uppercase; font-family: source sans pro; text-align: center; margin-top: -15px;"><img src="https://files.jcink.net/uploads/freakuency/skinhez/roses/jelen.png" style="margin: 1px;"></div></td><td>
+
+                            <div style="font-size: 11px; width: 400px; line-height: 110%; font-family: roboto; color: #ccc;">
+
+                                A radikálisok egyre nagyobb fenyegetést jelentenek, mióta Asmodai és Yana is nyíltan hadat üzentek az alakváltók jelenlegi hierarchiájának. Bár eltérő cél vezérli őket, összefogtak a lények vezetősége ellen, akik kétségbeesetten próbálják kitalálni, mi is legyen a következő lépés. <br>Az emberek világában sem nevezhető harmonikusnak a helyzet. A vadászklánok szervezettsége megdőlt, mióta Yana egyik embere, Alphus a Scaglione család vezetőjének arcát magára öltve mind a négy vadászcsaládból befolyásos alakokat gyilkolt meg, tettét pedig a lények törvényes vezetőinek számlájára rótta. Így a vadászok és az alakváltók augusztustól kezdve nyílt háborúban vannak egymással.<br>És ha még ez nem lenne elég... szeptember végén fény derül az alakváltók létezésére az egész világon.</div></td></tr></table>
+
+                    </div>
+                    <div style=" border-bottom: 2px solid #939eb2; padding-bottom: 20px; padding-top: 20px; width: 140%; margin-left: 100px ">
+                        <table><tr><td>
+
+
+                            <div style="font-size: 11px; font-family: roboto; color: #ccc;width: 630px; line-height: 110%; text-align: right">
+                                Sok ezer évvel ezelőtt a Földön katasztrófák sora borította fel a természet rendjét és formálta át a bolygót. Így születtek meg a mítoszok ezerarcú teremtményei, akik ma is köztünk élnek.
+                                Történelmük során hol társai, hol ellenségei voltak a halandóknak, a jelenlegi korban azonban kénytelenek alávetni magukat az ember társadalmának, és titokban tartani létezésüket.
+
+                                Mindez mégis változni látszik, hiszen a modern technológiák vakító fényében nincs az az ember vagy alakváltó, aki elbújhatna ezen a bolygón.</div></td><td>
+
+
+                        </td></tr></table>
+
+                    </div>
+
+                    <table><tr><td>
+                        <div style="  margin-left: 60px; font-size: 30px; font-weight: 500; letter-spacing: 2px; color: #fff;line-height: 23px;  text-transform: lowercase;  font-family: josefin sans; text-align: right; padding-top: 50px">vezetőség</div>
+                    </td><td>
+
+                        <div style="font-size: 11.5px; width: 530px; line-height: 110%; font-family: playfair display; color: #363636; padding-top: 50px;;">
+
+                            <a href="/index.php?showuser=2"><img src="http://files.jcink.net/uploads/freakuency/skinhez/Million_Pieces/staff1.png" style="margin: 1px;"></a> <a href="/index.php?showuser=28"><img src="http://files.jcink.net/uploads/freakuency/skinhez/Million_Pieces/staff2.png" style="margin: 1px;"></a>
+
+
+
+                        </div></td></tr></table>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <script language='JavaScript' type="text/javascript">
+                <!--
+                function buddy_pop() { window.open('index.php?act=buddy&s=','BrowserBuddy','width=250,height=500,resizable=yes,scrollbars=yes'); }
+                function chat_pop(cw,ch)  { window.open('index.php?s=&act=chat&pop=1','Chat','width='+cw+',height='+ch+',resizable=yes,scrollbars=yes'); }
+                function multi_page_jump( url_bit, total_posts, per_page )
+                {
+                    pages = 1; cur_st = parseInt(""); cur_page  = 1;
+                    if ( total_posts % per_page == 0 ) { pages = total_posts / per_page; }
+                    else { pages = Math.ceil( total_posts / per_page ); }
+                    msg = "Please enter a page number to jump to between 1 and" + " " + pages;
+                    if ( cur_st > 0 ) { cur_page = cur_st / per_page; cur_page = cur_page -1; }
+                    show_page = 1;
+                    if ( cur_page < pages )  { show_page = cur_page + 1; }
+                    if ( cur_page >= pages ) { show_page = cur_page - 1; }
+                    else { show_page = cur_page + 1; }
+                    userPage = prompt( msg, show_page );
+                    if ( userPage > 0  ) {
+                        if ( userPage < 1 )     {    userPage = 1;  }
+                        if ( userPage > pages ) { userPage = pages; }
+                        if ( userPage == 1 )    {     start = 0;    }
+                        else { start = (userPage - 1) * per_page; }
+                        window.location = url_bit + "&st=" + start;
+                    }
+                }
+
+                Collapse="<img alt='Collapse' title='Collapse' src='https://files.jcink.net/themes/default/cat-collapse.png' />"
+                Expand="<img alt='Expand' title='Expand' src='https://files.jcink.net/themes/default/cat-expand.png' />"
+
+
+
+                //-->
+            </script>
+
+            <!--IBF.BANNER-->
+            <div id='logostrip'>
+                <a href='http://freakuency.jcink.net/index.php?' title='Board Home'><img width='207' height='57'  width='207' height='57' src="style_images/1/spacer.gif" /><!-- You can insert a logo image here in place of the white spacer --></a>
+            </div>
+            <!-- IE6/Win TABLE FIX -->
+            <table  width="100%" cellspacing="6" id="submenu">
+                <tr>
+                    <td><a href='index.php'>Freakuency</a><!--IBF.RULES--></td>
+
+                    <td align="right">
+
+                        <img src="style_images/1/atb_help.gif" border="0" alt="" />&nbsp;<a href='http://freakuency.jcink.net/index.php?act=Help'>Help</a>&nbsp; &nbsp;&nbsp;<img src="style_images/1/atb_search.gif" border="0" alt="" />&nbsp;<a href='http://freakuency.jcink.net/index.php?act=Search&amp;f='>Search</a>&nbsp; &nbsp;&nbsp;<img src="style_images/1/atb_members.gif" border="0" alt="" />&nbsp;<a href='http://freakuency.jcink.net/index.php?act=Members'>Members</a>&nbsp; &nbsp;&nbsp;<img src="style_images/1/atb_calendar.gif" border="0" alt="" />&nbsp;<a href='http://freakuency.jcink.net/index.php?act=calendar'>Calendar</a>&nbsp; &nbsp;&nbsp; <img src="https://files.jcink.net/style_images/1/shop.png" border="0" alt="" />&nbsp;<a href='?act=store'>Shop</a>
+
+                        <!--IBF.CHATLINK-->
+                        <!--IBF.TSLLINK-->
+                    </td>
+
+
+                </tr>
+            </table>
+
+            <div align='center'>
+
+                <!-- Ad Removal / Premium Board -->
+
+            </div>
+
+
+            <span id='sub_bar' style="display:none;"> &middot; <span id='subaccounts_menu'>
+<form action='http://freakuency.jcink.net/index.php?&act=Login&CODE=01&CookieDate=1' name='subswitch' method='POST'>
+<input type='hidden' name='auth_key' value='78cd061b996da73231590c2db3ba5a59'>
+<input type='hidden' name='UserName' value='subacct'>
+<input type='hidden' name='PassWord' value='subacct'>
+<input type='hidden' name='referer' value='showuser=213' />
+<select class='forminput' name='sub_id' onchange='this.form.submit()'>
+<option value='------------' selected='selected'>Switch Account</option>
+<option value='195'>&nbsp;&nbsp;&raquo; Gabriele Davi </option><option value='314'>&nbsp;&nbsp;&raquo; Mushu </option><option value='407'>&nbsp;&nbsp;&raquo; Titus Bony </option>
+</select>
+</form>
+</span></span>
+            <table width="100%" id="userlinks" cellspacing="6">
+                <tr>
+                    <td><strong>Logged in as:  <a href='http://freakuency.jcink.net/index.php?showuser=213' id='logged-in-as'>Aegir</a></strong> ( <a href='http://freakuency.jcink.net/index.php?act=Login&amp;CODE=03&amp;key=78cd061b996da73231590c2db3ba5a59' id='log-out'>Log Out</a><span id='subacct_link'> &middot; <a href='javascript:void(0);'  onclick="document.getElementById('subacct_link').innerHTML=document.getElementById('sub_bar').innerHTML;">Switch Account</a></span>   )</td>
+                    <td align='right'>
+                        <b><a href='http://freakuency.jcink.net/index.php?act=UserCP&amp;CODE=00' title='Edit my settings, such as signature, avatar and more...' id='my-controls'>My Controls</a></b> &middot; <a href='http://freakuency.jcink.net/index.php?act=Msg&amp;CODE=01' id='x-new-messages'>0 New Messages</a>
+                        &middot; <a href='http://freakuency.jcink.net/index.php?act=Search&amp;CODE=getnew' id='view-new-posts'>View New Posts</a> &middot; <a href='javascript:load_alerts();' title='Alerts' class='alerts-indicator alerts-new' id='alerts-indicator'><strong>Alerts (1)</strong></a>
+
+                        <div id='recent-alerts' style='display: none;'>
+                            <div class='tableborder'>
+                                <div class="pformstrip"> Recent Alerts <div style="float: right;"><a href="javascript:document.getElementById('recent-alerts').style.display='none';void(0);">[x]</a></div></div>
+                                <span id='recent-alerts-data'></span>
+                                <div class='pformstrip' style='text-align: center;'>
+                                    <a href='http://freakuency.jcink.net/index.php?act=UserCP&CODE=alerts' title='View All Alerts'>View All Alerts</a> &middot; <a  href='javascript:read_alerts();'  title='Mark All Read'>Mark All Read</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        &middot; <a href="javascript:window.open('index.php?showuser=213&CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);" id='my-friends'>My Friends</a><br />
+                    </td>
+                </tr>
+            </table>
+            <script>
+
+                function read_alerts() {
+                    $('#recent-alerts').slideToggle('slow');
+                    $.get( "index.php?recent_alerts=1&read=1", function( data ) {
+                        $( "#recent_alerts_data" ).html( data );
+                    });
+                    $( ".alerts-indicator" ).html( "Alerts (0)");
+                }
+
+
+                function load_alerts() {
+
+                    alert_link = $('.alerts-indicator').position().left-350;
+
+                    $('#recent-alerts').css({
+                        left: alert_link + "px",
+                    });
+
+                    if($('#recent-alerts').is(':visible')) {
+                        $('#recent-alerts').slideToggle('slow');
+                    } else {
+                        $.get( "index.php?recent_alerts=1", function( data ) {
+                            $( "#recent-alerts-data" ).html( data );
+                        });
+                        $("#recent-alerts").slideToggle('slow');
+                    }
+                }
+
+            </script>
+
+            <style>
+                #recent-alerts {
+                    position: absolute;
+                    width:400px;
+                    z-index: 999;
+                    text-align: left;
+                }
+            </style>
+
+            <br />
+
+            <div class="innerwrapper">
+                <div id='inline_pm'></div>
+                <div style="height:550px; padding: 50px; background-color: #fff;" ><div class="profileavatarcont"><div class="profileavatar" style="background-image:url('https://i.postimg.cc/90hzyfwr/nightmare-Aegir-11.jpg'); background-repeat: no-repeat;    background-size: cover;    background-position: center; height: 400px;"></div></div><div class="profilemaincont"><div class="profileheadercont">
+                    <div class="profileheadername">Aegir</div>
+                    <div class="profileheaderdesc"><a href="http://freakuency.jcink.net/index.php?act=Msg&CODE=04&MID=213"  title="PM küldése"><i class="fal fa-envelope fa-fw"></i></a> <a href="/index.php?act=Search&CODE=getalluser&mid=213&type=topics" title="Indított témák"><i class="fal fa-folder-open fa-fw"></i></a> <a href="/index.php?act=Search&CODE=getalluser&mid=213" title="Összes hozzászólás"><i class="fal fa-pencil-alt fa-fw"></i></a> <a href="http://freakuency.jcink.net/index.php?showtopic=986" title="Előtörténet"><i class="fal fa-file-alt fa-fw"></i></a></div></div>
+
+                    <div class="profileuser"><div class="profileuserhead">Moondancer</div>
+                        <div class="profileuserinfo"><b>hozzászólások</b><i><a href="/index.php?act=Search&CODE=getalluser&mid=213" title="Összes hozzászólás">268</a></i>
+                        </div>
+                        <div class="profileuserinfo"><b>legutóbb itt</b><i>Today</i></div>
+
+                        <div class="profileuserinfo"><b>posztolt</b><i>Yesterday at 10:27 pm</i></div>
+                        <div class="profileuserinfo"><b>csatlakozott</b><i>6-August 17</i></div>
+                    </div>
+
+
+
+                    <div class="profiledescriptioncont">
+                        <div class="profiledescription">
+                            <b>csoport</b> <i>Jégsárkány</i></div>
+                    </div>
+                    <div class="profiledescriptioncont">
+                        <div class="profiledescription">
+                            <b>alias</b> <i>Seth O&#39;Neill</i></div>
+                    </div>
+                    <div class="profiledescriptioncont">
+                        <div class="profiledescription">
+                            <b>életkor</b> <i>805 év</i></div>
+                    </div>
+                    <div class="profiledescriptioncont">
+                        <div class="profiledescription">
+                            <b>lakhely</b> <i>New York</i></div>
+                    </div>
+                    <div class="profiledescriptioncont">
+                        <div class="profiledescription">
+                            <b>jellem</b> <i>Törvényes jó</i></div>
+                    </div>
+                    <div class="profiledescriptioncont">
+                        <div class="profiledescription">
+                            <b>play by</b> <i>Ryan Reynolds</i></div>
+                    </div></div>
+                    <div class="profilequotecont"><div class="profilequoteconttext"><i>"Any kind of crisis can be good. It wakes you up."</i></div></div><div class="profilequotecontic" style="background-image: url('https://66.media.tumblr.com/87d2d2a9ac2b39036c30bd47483b99ea/tumblr_inline_pq6629AYkA1vfoo65_1280.gif')"></div></div></div>
+            <!-- Copyright Information -->
+
+            <div align='center' class='copyright'>Powered by <a href="https://www.invisionboard.com" target='_blank'>Invision Power Board</a>(U)  &copy; 2019 &nbsp;<a href='http://www.invisionpower.com' target='_blank'>IPS, Inc.</a> &middot; <a href='index.php?act=Mobile'>Mobile Version</a> &middot; <a href='index.php?act=privacy'>Privacy Policy</a> <script src='//files.jcink.net/html/quickedit/common.c.js'></script><script src='//files.jcink.net/html/quickedit/qe.js'></script>
+                <script>
+                    var maxHeight = 550;
+                    var maxWidth = 550;
+                </script>
+                <script src='//files.jcink.net/html/resize.js'></script>
+
+                <A NAME="bottom">.</a><center>
+            </div>
+        </div>
+
+        <script src="https://files.jcink.net/uploads/freakuency/skinhez/push_sidebar.js"></script>
+    </div>
+</div>
+<div id='push-menu'>
+    <div class='pushed-cbox'>
+
+        <div class="m-20"><div style="margin-left: 10px;  z-index: 0; display: inline-block; filter: brightness(1.24); opacity: .7; padding: 3px; border: 1px solid #444;"><div style=" width: 50px;height:50px;filter: grayscale(100%);    background-repeat: no-repeat;    background-size: cover;    background-position: center; background-image:url('https://66.media.tumblr.com/87d2d2a9ac2b39036c30bd47483b99ea/tumblr_inline_pq6629AYkA1vfoo65_1280.gif');"></div></div>
+            <div class="headeruser">
+                <b>üdv itt ismét,</b>
+                <div class="headerusername"><a href="index.php?showuser=213">Aegir</a></div><br>
+                <div class="headerusermenuic">
+<span id='sub_bar_2' style="display:none;"><span id='subaccounts_menu'>
+<form action='http://freakuency.jcink.net/index.php?&act=Login&CODE=01&CookieDate=1' name='subswitch' method='POST'>
+<input type='hidden' name='auth_key' value='78cd061b996da73231590c2db3ba5a59'>
+<input type='hidden' name='UserName' value='subacct'>
+<input type='hidden' name='PassWord' value='subacct'>
+<input type='hidden' name='referer' value='showuser=213' />
+<select class='forminput' name='sub_id' onchange='this.form.submit()'>
+<option value='------------' selected='selected'>Switch Account</option>
+<option value='195'>&nbsp;&nbsp;&raquo; Gabriele Davi </option><option value='314'>&nbsp;&nbsp;&raquo; Mushu </option><option value='407'>&nbsp;&nbsp;&raquo; Titus Bony </option>
+</select>
+</form>
+</span></span><span id='subacct_link_2'> <a href='javascript:void(0);' onclick="document.getElementById('subacct_link_2').innerHTML=document.getElementById('sub_bar_2').innerHTML;"  title="Átjelentkezés"><i class="fal fa-random fa-fw"></i></span></a>
+                    <a href='index.php?act=UserCP'  title="Beállítások"><i class="fal fa-cog fa-fw"></i></a>
+                    <script>
+                        if("0" > 0) {
+                            document.write('<a href="index.php?act=Msg&CODE=01" title="Üzenetek"><i class="fal fa-envelope fa-fw"></i><span style="color:#bd6969;"> (0)</span></a>');
+                        }
+                        else {
+                            document.write('<a href="index.php?act=Msg&CODE=01" title="Üzenetek"><i class="fal fa-envelope fa-fw"></i></a>');
+                        }
+                    </script>
+                    <script>
+                        if("1" > 0) {
+                            document.write('<a href="index.php?act=UserCP&CODE=alerts" title="Értesítések"><i class="far fa-bell fa-fw"></i><span style="color:#bd6969;"> (1)</span></a>');
+                        }
+                        else {
+                            document.write('<a href="index.php?act=UserCP&CODE=alerts" title="Értesítések"><i class="far fa-bell fa-fw"></i></a>');
+                        }
+                    </script><br>
+                    <a href="#" class="modal-link" data-modal-target="gyorslinkek"  title="Gyorslinkek"><i class="fal fa-compass fa-fw"></i></a>
+                    <a href="/index.php?act=Pages&pid=42&h=1" target="_blank"><i class="fab fa-wikipedia-w fa-fw"  title="Wikipédia"></i></a>
+                    <a href="#" class="modal-link" data-modal-target="hellokicsim"  title="Információ"><i class="fal fa-book-open fa-fw"></i></a>
+                    <a href="index.php?act=Login&CODE=03&key=78cd061b996da73231590c2db3ba5a59"  title="Kijelentkezés"><i class="fal fa-sign-out-alt fa-fw"></i></a></div>
+
+            </div></div>
+
+
+        <div class="g-20" style="display: none;">
+            <div class="headeruser">
+                üdv a freaksen,
+                <div class="headerusername">vendég!</div>
+                <div class="headerusermenu">
+
+                    <i>i.</i> <td><a href='/index.php?act=Reg&CODE=00'>csatlakozz!</a><br>
+                    <i>ii.</i> <td><a href='/index.php?act=Login&CODE=00'>belépés</a><br>
+                    <i>iii.</i> <td><a href='/index.php?act=Pages&pid=42&h=1'>a világunk</a><br>
+                    <i>iv.</i> <td><a href='index.php?showtopic=5'>szabályzat</a><br>
+                    <i>v.</i> <td><a href='/index.php?showforum=5'>hirdetés</a></div>
+
+            </div></div>
+
+
+
+        <div style="margin-left: 15px;">
+            <iframe src="https://www4.cbox.ws/box/?boxid=4335923&boxtag=Q01MJ2" width="190px" height="360px" allowtransparency="yes" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe><br>
+            <a href="https://discord.gg/S8sT7cn" target="blank"><span style="color: #333; font-size: 28px; margin-left: -210px;"><i title="Csatlakozz hozzánk Discordon!" class="fab fa-discord" aria-hidden="true"></i></span></a>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+<div id=backtotop><br><br><table border=0><tbody><tr><th>
+    <a href="index.php"><span style="font-size: 20px;" ><i class="fa fa-home" aria-hidden="true" title="főoldal" margin-right: 10px;></i></a><br>
+    <a href=#><i class="fa fa-chevron-up" aria-hidden="true"></i><br>
+    </a><A href="#bottom"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></th>
+    <th></th></tr></tbody></table></div>
+
+
+<script>$("#recent-topics").appendTo("#recent-topics-clip");</script>
+<script src="http://files.jcink.net/uploads/freakuency/skinhez/codearea.js"></script>
+<script>
+
+    //SHOP TRANSLATION
+    $('#ucpmenu a:contains("Edit Inventory")').html("Kincsesláda szerkesztése");
+    $('#ucpcontent .pformstrip:contains("Name")').html("Név");
+    $('#ucpcontent .pformstrip:contains("Description")').html("Leírás");
+    $('#ucpcontent .pformstrip:contains("Stock")').html("Darab");
+    $('#ucpcontent .pformstrip:contains("Icon")').html("Ikon");
+    $('#ucpcontent .pformstrip:contains("Action")').html("Tanulás");
+    $('#ucpcontent .pformstrip:contains("Item Price")').html("Ár");
+    $('#ucpcontent .pformstrip:contains("Buy Item")').html("Vásárlás");
+    $('#ucpcontent a:contains("Use Item")').html("Tanul");
+    $('#ucpcontent td:contains("Sold Out")').html("Kifogyott");
+    $('#ucpcontent .pformleft:contains("Inventory Empty.")').html("Jelenleg nincs elem a kincsesládában.");
+    $('#ucpcontent td:contains("You currently have: ")').html("Jelenlegi Szilánkok száma:");
+    $('#ucpcontent td:contains("Current market value of Inventory")').html("A Kincsesládában lévő tételek összértéke:");
+    $('#ucpmenu a:contains("Send Money")').remove();
+    $('#ucpmenu a:contains("Bank")').remove();
+    $('#ucpmenu a:contains("Send An Item")').remove();
+    $('#ucpmenu a:contains("Inventory")').html("Kincsesláda");
+    $('#ucpmenu p:contains("Other Stats")').remove();
+    //$('#ucpmenu p:contains("Quiz")').remove();
+    $('#ucpmenu a:contains("Posting Points")').html("Pontszerzés Infó");
+    $('#ucpmenu div:contains("Stats")').remove();
+    $('#ucpmenu div:contains("Personal Links")').remove();
+    $('#ucpmenu div:contains("Misc Links")').html("Pontszerzés");
+    $('#ucpmenu div:contains("Shop Categories")').html("Kategóriák");
+    $('#ucpmenu div:contains("Staff")').html("Admin");
+    $('#ucpmenu a:contains("Fine Members")').html("Pontlevonás");
+    $('#ucpmenu a:contains("Edit Points")').html("Pontok szerkesztése");
+    $('#ucpcontent a:contains("Buy")').html("Vásárlás");
+    $('#ucpcontent a:contains("« Last")').html("« Előző");
+    $('#ucpcontent a:contains("Next »")').html("Következő »");
+    $('#ucpcontent td:contains("Winnings")').html("Nyeremény");
+    $('#ucpcontent td:contains("Status")').html("Státusz");
+    $('#ucpcontent td:contains("Time Left")').html("Időkorlát");
+    //$('#ucpcontent td:contains("Played")').html("Kész");
+    //$('#ucpcontent td:contains("Play")').html("Játék");
+    //$('#ucpcontent td:contains("Open")').html("Nyitott");
+    $('#ucpcontent td:contains("Closed")').html("Lezárt");
+    $('#ucpcontent a:contains("Take Quiz")').html("Játszok!");
+    $('#ucpcontent a:contains("Member Results")').html("Eredmények");
+    $('#ucpcontent .pformleft:contains("Points Per a new Topic:")').html("Új Téma indításáért járó pontok:");
+    $('#ucpcontent .pformleft:contains("Points Per a Reply")').html("Válaszokért járó pontok:");
+    $('#ucpcontent .pformleft:contains("Points Per a new Poll:")').html("Új Szavazásért járó pontok:");
+    $('#ucpcontent .pformleft:contains("Word count in posts requried to be rewarded:")').html("Pontokhoz szükséges minimum szavak száma:");
+    $('#ucpcontent .pformleft:contains("None - Disabled")').html("Nincs - Kikapcsolva");
+    $('#ucpcontent .pformleft:contains("Amount to Fine:")').html("Mennyiség:<br />Plusz-LEVONÁS<br />Mínusz-HOZZÁADÁS");
+    $('#ucpcontent .pformleft:contains("Reason")').html("Indok:");
+    $('#ucpcontent .pformstrip:contains("Place")').html("Helyezés");
+    $('#ucpcontent .pformstrip:contains("Username")').html("Karakternév");
+    $('#ucpcontent .pformstrip:contains("Answers Right")').html("Helyes válaszok");
+    $('#ucpcontent .pformstrip:contains("Time To finish")').html("Befejezési idő");
+    $('#ucpcontent .pformleft:contains("Less then a Minute")').html("1 percen belül");
+    $('th .four:contains("<a href="N/A">")').remove();
+
+    //UPPER ROUND BUTTON TRANSLATION
+    //$('#recent-topics div:contains("Recent Topic Activity")').remove();
+
+    //PROFILE TRANSLATION
+    $('#ucpcontent div:contains("Welcome to your control panel")').html("Üdvözöllek a Control Panelen");
+    $('#ucpcontent .pformstrip:contains("Your account summary")').html("Account Információk");
+    $('#ucpcontent .pformstrip:contains("Your messenger summary")').html("Üzenet Információk");
+    $('#ucpcontent .pformstrip:contains("Your personal note pad")').html("Privát Jegyzettömb");
+    $('#ucpcontent .forminput:contains("You may store post snippets, or any other information you need to hand here")').html("Erre a helyre rögzíthetsz személyes feljegyzéseket, vagy bármilyen információt, amire szükséged van. Nem jelenik meg a profilban!");
+    $('#ucpcontent td:contains("Your registered email address")').html("Regisztrált email címed:");
+    $('#ucpcontent td:contains("Total number of posts to date")').html("Összes IC hozzászólásod:");
+    $('#ucpcontent td:contains("You registered on ")').html("Regisztrációd dátuma:");
+    $('#ucpcontent td:contains("Average number of posts per day")').html("Hozzászólások száma naponta (átlag):");
+    $('#ucpcontent td:contains("Total messages (in all folders)")').html("Összes privát üzenet (minden mappa):");
+    $('#ucpcontent td:contains("Message space left: ")').html("Még ennyi üzenet tárolható:");
+
+    //MENU TRANSLATION
+    //--MESSAGES
+    $('#ucpmenu .pformstrip:contains("Messenger")').html("Üzenetek");
+    $('#ucpmenu a:contains("Compose New Message")').html("Új üzenet írása");
+    $('#ucpmenu a:contains("Go to Inbox")').html("Bejövő üzenetek");
+    $('#ucpmenu a:contains("Sent Items")').html("Elküldött üzenetek");
+    $('#ucpmenu a:contains("Empty PM Folders")').html("Mappák takarítása");
+    $('#ucpmenu a:contains("Edit Storage Folders")').html("Mappák szerkesztése");
+    $('#ucpmenu a:contains("My Friends/Contacts")').html("Barátok/Kapcsolatok");
+    $('#ucpmenu a:contains("Archive Messages")').html("Archív üzenetek");
+    $('#ucpmenu a:contains("Saved (Unsent) PMs")').html("Elküldetlen üzenetek");
+    $('#ucpmenu a:contains("Message Tracker")').html("Üzenet követése");
+    //--SUBSCRIPTIONS
+    $('#ucpmenu .pformstrip:contains("Subscriptions")').html("Feliratkozások");
+    $('#ucpmenu a:contains("View Topics")').html("Témák megtekintése");
+    $('#ucpmenu a:contains("View Forums")').html("Fórum megtekintése");
+    //--PERSONAL PROFILE
+    $('#ucpmenu .pformstrip:contains("Personal Profile")').html("Személyes profil");
+    $('#ucpmenu a:contains("Edit Profile info")').html("Profil szerkesztése");
+    $('#ucpmenu a:contains("Edit Signature")').html("Aláírás szerkesztése");
+    $('#ucpmenu a:contains("Edit Sub-accounts")').html("Karakterkapcsolás");
+    $('#ucpmenu a:contains("Edit Avatar Settings")').html("Avatar beállítások");
+    $('#ucpmenu a:contains("Change Username")').html("Felhasználónév csere");
+    $('#ucpmenu a:contains("Change Personal Photo")').html("Személyes fotó csere");
+    //--OPTIONS
+    $('#ucpmenu .pformstrip:contains("Options")').html("Beállítások");
+    $('#ucpmenu a:contains("Alert Settings")').html("Értesítések");
+    $('#ucpmenu a:contains("Email Settings")').html("E-mail értesítések");
+    $('#ucpmenu a:contains("Board Settings")').html("Oldal");
+    $('#ucpmenu a:contains("Shoutbox Settings")').html("Shoutbox");
+    $('#ucpmenu a:contains("Skin and Languages")').html("Nyelv és Dizájn");
+    $('#ucpmenu a:contains("Change Email Address")').html("E-mail cím");
+    $('#ucpmenu a:contains("Change Password")').html("Jelszócsere");
+
+    //NEW MESSAGE FORM TRANSLATION
+    $('#ucpcontent .pformleft:contains("Choose from your address book")').html("Válassz a címlistából (Barát hozzáadása szükséges)");
+    $('#ucpcontent .pformleft:contains("OR Enter the members name here")').html("Vagy írd be a karakter nevét");
+    $('#ucpcontent .pformstrip:contains("Carbon copy to other members")').html("- Másolat más tagoknak");
+    $('#ucpcontent .pformleft:contains("You may enter up to 6 names in the carbon copy box.")').html("Maximum 6 név, soronként egy!");
+    $('#ucpcontent .pformstrip:contains("Enter your message. Privacy warning: PM contents may be logged or monitored.")').html("Üzenet");
+    $('#ucpcontent .pformleft:contains("Message Title")').html("Üzenet címe");
+    $('#ucpcontent .pformstrip:contains("Code Buttons")').html("- Formázási kódok");
+    $('#ucpcontent a:contains("Close all Tags")').html("Tag-ek lezárása");
+    $('#ucpcontent .pformstrip:contains("Enter your Post")').html("- Üzenet beírása");
+    $('#ucpcontent a:contains("Check Post Length")').html("Méret ellenőrzése");
+    $('#ucpcontent .pformstrip:contains("Options")').html("Opciók");
+    $('#ucpcontent b:contains("Clickable Smilies")').html("Használható emotikonok");
+    $('#ucpcontent a:contains("Show All")').html("Összes mutatása");
+    $('#ucpcontent b:contains("Add a copy of this message to my sent items folder")').html("Levél mentése a kimenők közé (enélkül nem látod a kimenők között!)");
+    $('#ucpcontent b:contains("Track this message?")').html("Üzenet nyomkövetése");
+
+    //INBOX&OUTBOX TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Inbox")').html("Bejövő Üzenetek");
+    $('#ucpcontent a:contains("Select read messages")').html("Olvasott üzenetek kijelölése");
+    $('#ucpcontent a:contains("Unselect all")').html("Kijelölés eltávolítása");
+    $('#ucpcontent a:contains("Message Title")').html("Tárgy");
+    $('#ucpcontent a:contains("Sender")').html("Feladó");
+    $('#ucpcontent a:contains("Date")').html("Dátum");
+    $('#ucpcontent .pformstrip:contains("Sent Items")').html("Elküldött Üzenetek");
+    $('#ucpcontent a:contains("This message was sent to")').html("Címzett");
+    $('#ucpcontent .row1:contains("No messages found")').html("Nincs elküldött üzenet");
+    $('#ucpcontent a:contains("View all")').html("Összes megtekintése");
+    $('#ucpcontent b:contains("Jump to folder")').html("Váltás másik mappára:");
+    $('#ucpcontent a:contains("Add to Buddies")').html("Jelölés barátnak");
+
+    //EMPTY PM FOLDERS TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Empty PM Folders")').html("Üzenet mappák takarítása");
+    $('#ucpcontent .titlemedium:contains("Folder")').html("Mappa neve");
+    $('#ucpcontent .titlemedium:contains("No. PMs")').html("Üzenetek száma");
+    $('#ucpcontent .titlemedium:contains("Empty?")').html("Törlés?");
+    $('#ucpcontent .row1:contains("Unsent PMs")').html("Elküldésre váró üzenetek");
+    $('#ucpcontent .row1:contains("Inbox")').html("Bejövő üzenetek");
+    $('#ucpcontent .row1:contains("Sent Items")').html("Elküldött üzenetek");
+    $('#ucpcontent p:contains("You may remove your stored personal messages - simply choose which folders you wish to empty and click on the continue button.")').html("Az alábbi opcióval eltávolíthatod a személyes üzeneteket. Ennek nagyon egyszerű a módja, csupán be kell pipálnod a megfelelő sorhoz tartozó mezőket. Kérlek vedd figyelembe, hogy ez a törlés végleges, a törölt üzeneteket nem tudjuk visszaállítani!");
+    $('#ucpcontent strong:contains("Keep Unread PMs")').html("Olvasatlan üzenetek megtartása?");
+
+    //FOLDER EDIT TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Current Virtual Directories")').html("Jelenlegi Mappák");
+    $('#ucpcontent p:contains("You may edit the names, or delete the name to delete this virtual directory. Please note, that all messages in this directory will be lost if you delete this directory")').html("Megváltoztathatod a mappák nevét, esetleg törölheted is őket (Kivéve: Inbox - Bejövő üzenetek és Sent Items - Elküldött Üzenetek). Kérlek vedd figyelembe, hogy ha törölsz egy mappát és abban üzenetek vannak, akkor azok az üzenetek örökre elvesznek, nem tudjuk helyreállítani őket!");
+    $('#ucpcontent p:contains("You may add extra directories. You do not have to use all the input boxes.")').html("Itt adhatsz új mappákat a már meglévőkhöz. Nem kell felhasználnod az összes mezőt, csak ha szükséges.");
+    $('#ucpcontent .pformstrip:contains("Add New Virtual Directories")').html("Új Mappa Hozzáadása");
+
+    //ARCHIVE MESSAGES TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Archive Messages")').html("Archív Üzenetek");
+    $('#ucpcontent p:contains("The archived messages will be compiled into a single file and emailed to your address as an attachment of your choice.")').html("Kérlek válaszd ki az archiválás kritériumait.<br /> Az archív üzeneteket a rendszer egy fájlban csoamgolja össze az általad választott fájlformátum szerint (Importable MS Excel datafile - Excelben, vagy HTML page - HTML oldal formátumban)");
+    $('#ucpcontent td:contains("Archive from which folder?")').html("<b>Melyik mappából archiváljunk?</b>");
+    $('#ucpcontent td:contains("Archive messages received in the last")').html("<b>Üzenetek archiválása az elmúlt x napból:</b>");
+    $('#ucpcontent td:contains("Number of messages to archive")').html("<b>Archiválandó üzenetek száma:</b>");
+    $('#ucpcontent td:contains("Delete messages after archiving?")').html("<b>Töröljük az üzeneteket archiválás után?</b>");
+    $('#ucpcontent td:contains("Compile datafile as")').html("<b>Üzenetek csomagolási fájlformátuma:</b>");
+
+    //SAVED UNSENT MESSAGES TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Saved Unsent Messages")').html("Mentett elküldésre váró üzenetek");
+    $('#ucpcontent .titlemedium:contains("Message Title")').html("<b>Tárgy</b>");
+    $('#ucpcontent .titlemedium:contains("Message For")').html("<b>Címzett</b>");
+    $('#ucpcontent .titlemedium:contains("Saved Date")').html("<b>Mentés dátuma</b>");
+    $('#ucpcontent .titlemedium:contains("CC Users?")').html("<b>Másolat címzettek</b>");
+    $('#ucpcontent .row2:contains("Yes")').html("<b>Igen</b>");
+
+    //MESSAGE TRACKING TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Read Messages")').html("Olvasott Üzenetek");
+    $('#ucpcontent .pformstrip:contains("Unread Messages")').html("Olvasatlan Üzenetek");
+    $('#ucpcontent p:contains("The messages shown here have been read by the person they were sent to.")').html("Ide kerülnek azok az üzenetek, amiket a címzett már elolvasott. <br /><b>Admin:</b><i> Sajnos ez az opció a tesztek szerint nem működik, szólj, ha te mégis látod az olvasottak alatt a leveleket!</i><br /><b>Untrack Selected Messages</b> gombbal a kiválasztott üzenetek követése leállítható.");
+    $('#ucpcontent p:contains("The messages shown here have got a read receipt by the recipient. You can untrack these messages.")').html("Ide kerülnek azok az üzenetek, amiket a címzett még nem olvasott el, de beállítottad rá a nyomonkövetést.");
+
+    //SUBSCRIPTION TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Current Subscriptions")').html("Aktuális Feliratkozások");
+    $('#ucpcontent .pformstrip:contains("Your Forum Subscriptions")').html("Fórum Feliratkozások");
+    $('#ucpcontent .titlemedium:contains("Topic")').html("Téma");
+    $('#ucpcontent .titlemedium:contains("Replies")').html("Válaszok");
+    $('#ucpcontent .titlemedium:contains("Views")').html("Megtekintések");
+    $('#ucpcontent .titlemedium:contains("Last Post")').html("Utolsó Hozzászólás");
+    $('#ucpcontent .titlemedium:contains("Forum")').html("Fórum");
+    $('#ucpcontent a:contains("New Window")').html("Új ablakban");
+    $('#ucpcontent a:contains("Unsubscribe")').html("Leiratkozás");
+    $('#ucpcontent .row3:contains("There are no subscriptions to show, try selecting a less restrictive date range")').html("Még egyetlen témára sem iratkoztál fel");
+    $('#ucpcontent div:contains("Subscribed areas are delivered as email or alert notifications per your preferences.")').html("<i>A feliratkozott témák változásairól e-mailt kapsz, vagy oldalértesítést a személyes beállításaid szerint.</i><br /><b>Unsubscribe</b>: Leiratkozás a kijelölt témáról");
+    $('#ucpcontent .row1:contains("You are not subscribed to any forums at present")').html("Még egyetlen fórumra sem iratkoztál fel");
+    $('#ucpcontent a:contains("Unsubscribe from all forums")').html("Leiratkozás minden fórumról");
+
+    //EDIT PROFILE TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Required Information, this section must be completed")').html("Karakter Profil (kötelező mezők)");
+    $('#ucpcontent .pformstrip:contains("Your personal profile, this section is optional")').html("Karakter Profil (opcionális mezők)");
+    $('#ucpcontent tr:contains("Date of Birth")').remove();
+    $('#ucpcontent tr:contains("Website URL")').remove();
+    $('#ucpcontent tr:contains("Date of Birth")').remove();
+    $('#ucpcontent tr:contains("GTalk Identity")').remove();
+    $('#ucpcontent tr:contains("AIM Identity")').remove();
+    $('#ucpcontent tr:contains("Yahoo Identity")').remove();
+    $('#ucpcontent tr:contains("MSN/Live Identity")').remove();
+    $('#ucpcontent .pformleft:contains("Skype Identity")').html("User Skype név");
+    $('#ucpcontent tr:contains("Location")').remove();
+    $('#ucpcontent tr:contains("Interests")').remove();
+
+    //SIGNATURE TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Your current Signature")').remove();
+    $('#ucpcontent .pformstrip:contains("Edit your signature")').html("Aláírás szerkesztése");
+    $('#ucpcontent a:contains("Check Length")').html("Hossz ellenőrzése");
+    $('#ucpcontent b:contains("Guided Mode")').html("Segítő mód");
+    $('#ucpcontent b:contains("Normal Mode")').html("Normál mód");
+
+    //SUB-ACCOUNTS TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Manage your sub-accounts")').html("Karakterek Összekapcsolása");
+    $('#ucpcontent p:contains("This is where you can manage sub-accounts.")').html("Ezen a felületen tudod a főkarakteredhez kapcsolni a többi karakteredet, ezt a számot nem korlátoztuk. Jelenleg akármennyi karakter hozzákapcsolható a fő accounthoz. <br /><br />Ennek legnagyobb előnye, hogy nem kell ki, illetve bejelentkezned a karakterek között, ezt a felső vezérlősávban a <b>Switch Account</b> legördülő menüjével automatikusan is megteheted. Minden egyéb funkcióban (avatar, aláírás, hozzászólások) különállóak maradnak a karakterek, csupán a funkció csupán a gyors váltásra szolgál. <br /><br /><b>Fontos megjegyezni, hogy minden sub-account is hozzáfér a fő accounthoz, illetve a többi kicsihez, így kérlek használj biztonságos jelszót. Ha ugyanis az egyik accountodat feltörnék, akkor így a többi is hozzáférhető, ezért felelősséget vállalni sajnos nem tudunk.</b><br /><br /><b>Delink Account(s)</b>: A kiválasztott karakter leválasztása a főkarakterről.<br /><b>Link This Account</b>: A beírt karakter hozzákapcsolása a főkarakterhez.");
+    $('#ucpcontent .titlemedium:contains("Username")').html("Karakternév");
+    $('#ucpcontent .titlemedium:contains("Registered")').html("Összekapcsolás ideje");
+    $('#ucpcontent .pformstrip:contains("Link an existing account")').html("Meglévő karakter hozzáadása");
+    $('#ucpcontent .pformleft:contains("Account username")').html("Karakter felhasználóneve");
+    $('#ucpcontent .pformleft:contains("Account password")').html("Karakter jelszava");
+    $('#ucpcontent td:contains("You currently have no sub accounts.")').html("<center>Jelenleg nincs ehhez az accounthoz kapcsolva másik karaktered.</center>");
+
+    //AVATAR TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Your Avatar Settings")').html("Karakterkép beállítások");
+    $('#ucpcontent .pformstrip:contains("Your Current Avatar")').html("Jelenlegi Karakterképed");
+    $('#ucpcontent .pformstrip:contains("Pre-installed avatars")').remove();
+    $('#ucpcontent .pformstrip:contains("Your image avatars")').html("Karakterkép Feltöltése");
+    $('#ucpcontent tr:contains("Choose an avatar from one of our galleries")').remove();
+    $('#ucpcontent .pformleft:contains("Enter a URL to an online avatar image")').html("url kód beillesztése");
+    $('#ucpcontent .pformleft:contains("Upload a new image from your computer")').html("tölts fel egy képet");
+    $('#ucpcontent a:contains("Restore")').html("Helyreállítás");
+    $('#ucpcontent tr:contains("Upload a new image from your computer")').remove();
+    $('#ucpcontent .pformright:contains("Image Scale On")').html("<b>Képméretezés</b><br /> (Ha túl nagy képet töltesz fel, a rendszer automatikusan átméretezi)");
+    $('#ucpcontent p:contains("Your avatar must be no bigger than")').html("A karakterkép nem lehet nagyobb, mint 250 (szélesség) x 350 (magasság) pixel, mérete pedig nem haladhatja meg a 256 KB-ot.<br />Elfogadott képtípusok:<b> .gif .jpeg .jpg .png</b><br /><br /><b>Update Avatar</b>: Kép frissítése<br /><b>Remove Avatar</b>: Kép eltávolítása");
+
+
+    //USERNAME CHANGE TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Your Username")').html("Névváltoztatás");
+    $('#ucpcontent .pformleft:contains("Your new username")').html("Igényelt új karakterneved:");
+    $('#ucpcontent .pformleft:contains("Pending request:")').html("Függő igénylés:");
+    $('#ucpcontent .pformright:contains("No pending requests")').html("Nincs függőben lévő igénylésed");
+    $('#ucpcontent .row2:contains("Igen")').remove();
+
+    //NO ACCESS PERMISSIONS TRANSLATION
+    $('#ucpcontent .pformstrip:contains("No access permissions")').html("Hozzáférés megtagadva");
+    $('#ucpcontent p:contains("Sorry, the board administrator has not enabled")').html("Sajnálom, a root admin nem engedélyezte ennek a funkciónak a használatát.");
+
+    //NOTIFICATION SETTINGS TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Send Alert?")').html("Értesítés küldése?");
+    $('#ucpcontent .pformstrip:contains("Send Email?")').html("Email küldése?");
+    $('#ucpcontent .pformstrip:contains("Setting")').html("Opció");
+    $('#ucpcontent .pformstrip:contains("Enabled")').html("Bekapcsolás");
+    $('#ucpcontent .row4:contains("New Personal Message Received to Inbox")').html("Új privát üzenet érkezése");
+    $('#ucpcontent .row4:contains("New Friend Request Received")').html("Barát felkérés érkezése");
+    $('#ucpcontent .row4:contains("New Comment on Profile")').html("Új profil komment");
+    $('#ucpcontent .row4:contains("New Topic Posted in Subscribed Forum")').html("Új hozzászólás feliratkozott fórumban");
+    $('#ucpcontent .row4:contains("New Replies Posted in Subscribed Topic")').html("Új hozzászólás feliratkozott témában");
+    $('#ucpcontent .row4:contains("Quoted Your Username in a Topic or Post")').html("Karakterneved idézése témában, vagy hozzászólásban");
+    $('#ucpcontent .row4:contains("@User Tagged You in a Topic or Post")').html("@Felhasználó tagelés témában, vagy hozzászólásban");
+    $('#ucpcontent .row4:contains("Push all alerts to my parent account (if subaccount)?")').html("Minden értesítés küldése a főkarakternek?");
+    $('#ucpcontent .row4:contains("Auto subscribe to topics you create for alert notifications?")').html("Feliratkozás minden általad létrehozott témára?");
+    $('#ucpcontent .row4:contains("Mark all alerts as read upon viewing the alert menu?")').html("Értesítés megjelölése olvasottként a menübe lépve?");
+    $('#ucpcontent .pformstrip:contains("Board Preferences")').html("Oldalbeállítások");
+    $('#ucpcontent td:contains("Hide my email address from other members")').html("<b>E-mail cím rejtése más tagok elől</b><br />Az opció bekapcsolásával a felhasználók nem küldhetnek neked emailt.");
+    $('#ucpcontent td:contains("Send me any updates sent by the board administrator")').html("<b>A fórum adminisztrátora küldhet értesítéseket a frissítésekről</b><br />Az opció bekapcsolásával az E-mail címed bekerül a fórum adminisztrátorának értesítési címlistájába.");
+    $('#ucpcontent td:contains("Include a copy of the post when")').html("<b>Hozzászólás megjelenítése az emailben feliratkozott témákról</b><br />A funkció bekapcsolásával a feliratkozott témákba küldött új hozzászólásokat az értesítő email egyszerű szöveg képében tartalmazza.");
+    $('#ucpcontent td:contains("Send a confirmation email when")').html("<b>Engedélyező email küldése új privát üzenet érkezésekor</b><br />Az opció bekapcsolásával a rendszer minden új privát üzenetről engedélyező levelet küld.");
+    $('#ucpcontent td:contains(" will automatically subscribe you to any topic ")').html("<b>Email értesítések bekapcsolása?</b><br />Az opció bekapcsolásával automatikusan feliratkozol minden általad indított, vagy megválaszolt témára");
+
+    //BOARD OPTIONS TRANSLATION
+    $('#ucpcontent div:contains("Time Zone")').html("Időzóna");
+    $('#ucpcontent b:contains("You may adjust the base time zone")').html("Időzóna beállítása");
+    $('#ucpcontent b:contains("Is daylight savings time in effect?")').html("Automatikus óraátállítás a kiválasztott időzónában?");
+    $('#ucpcontent td:contains("Do you wish to use quick edit if enabled on this forum?")').html("Szeretnél gyors szerkesztést (Quick Edit) használni, ahol elérhető?");
+    $('#ucpcontent td:contains("Do you wish to view members signatures when reading topics?")').html("Szeretnéd látni a tagok aláírásait?");
+    $('#ucpcontent td:contains("Do you wish to view images in posts, such as smilies and posted images?")').html("Szeretnél képeket látni (emotikonok és beillesztett képek) a hozzászólásokban?");
+    $('#ucpcontent td:contains("Do you wish to view members avatars when reading topics?")').html("Szeretnéd látni a tagok karakterképét?");
+    $('#ucpcontent td:contains("Do you wish to get a pop up notification when you get a new private message?")').html("Szeretnél felugró értesítést kapni új privát üzenet érkezésekor?");
+    $('#ucpcontent td:contains("Open Fast Reply automatically when available? *")').html("Gyors Válasz megnyitása ahol elérhető?");
+    $('#ucpcontent td:contains("Number of posts to show for each topic page")').html("Megjelenített hozzászólások száma témánként:");
+    $('#ucpcontent td:contains("Number of topics to show for each forum page")').html("Megjelenített hozzászólások száma fórumonként:");
+    $('#ucpcontent .desc:contains("* Note, these functions use cookies")').html("* <b>Megjegyzés</b>: Ez a funkció sütiket használ.");
+
+    //SHOUTBOX PREFERENCES TRANSLATION
+    $('#ucpcontent tr:contains("Which shoutbox appearence would you like to have showing?")').remove();
+    $('#ucpcontent tr:contains("Which shoutbox appearence would you like to have showing?")').remove();
+    $('#ucpcontent tr:contains("Show the shouters avatar when viewing the Regular shoutbox?")').remove();
+    $('#ucpcontent tr:contains("Show time when the shouter posted?")').remove();
+    $('#ucpcontent td:contains("Your default shout color?")').html("Ez legyen az alapszínem a shoutboxban:");
+    $('#ucpcontent tr:contains("Show the smilies table when viewing the Regular shoutbox?")').remove();
+    $('#ucpcontent tr:contains("Show the top shouters today table when viewing the Regular shoutbox?")').remove();
+    $('#ucpcontent tr:contains("If global shoutbox is available, what type do you want?")').remove();
+    $('#ucpcontent tr:contains("Your time for the shoutbox to refresh? Cannot be less than 30. Set to 0 for no refresh.")').remove();
+
+    //LANGUAGE SETTINGS TRANSLATION
+    $('#ucpcontent tbody:contains("Please select a language for the board interface")').html("<center>A nyelvbeállítás funkció jelenleg nem elérhető.</center>");
+
+    //EMAIL RESET TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Change your registered email address")').html("Regisztrációs Email cím cseréje");
+    $('#ucpcontent b:contains("Your current email address:")').html("Jelenlegi regisztált email címed:");
+    $('#ucpcontent .pformstrip:contains("Security Code")').html("Biztonsági Kód");
+    $('#ucpcontent td:contains("Enter your new email address")').html("Új Email cím beírása");
+    $('#ucpcontent td:contains("Confirm the new email address")').html("Új Email cím ismétlése");
+    $('#ucpcontent td:contains("Your Current Password")').html("Jelszó");
+    $('#ucpcontent td:contains("Your unique security code")').html("<b>Egyedi azonosítókód</b><br />Ha nem látsz számokat, vagy nem megjeleníthető a kép, kérlek értesítsd az adminisztrátort.");
+    $('#ucpcontent td:contains("Confirm security code")').html("<b>Biztonsági kód megadása</b><br />Kérlek írd be a képen látható 6 számjegyű kódot.<br /><b>Megjegyzés</b>: Csak számokat fogad el a rendszer.");
+
+    //PASSWORD RESET TRANSLATION
+    $('#ucpcontent .pformstrip:contains("Your Password")').html("Jelszócsere");
+    $('#ucpcontent p:contains("You may change your password here.")').html("Az alábbi funkció használatával megváltoztathatod a jelszavad.<br /><br />Megkíséreljük frissíteni az aktuális bejelentkezésed sikeres jelszóváltás után. Amennyiben mégis nehézségeket tapasztalsz, kérünk lépj ki és be, mielőtt az adminisztrátorhoz fordulnál a probléma megoldásáért.");
+    $('#ucpcontent td:contains("Enter your CURRENT password")').html("Írd be a JELENLEGI jelszavad");
+    $('#ucpcontent td:contains("Enter your NEW password")').html("Írd be az ÚJ jelszavad");
+    $('#ucpcontent td:contains("Please confirm your NEW password")').html("Kérlek írd be újra az ÚJ jelszavad");
+    //MAIN BOARD MODIFICATIONS
+    $('#delcookiesrow a:contains("Delete cookies set by this board")').html("Az oldal által használt sütik törlése");
+    $('#delcookiesrow a:contains("Mark all posts as read")').html("Mindent olvasottnak jelöl");
+    $('#boardstats span:contains("Board Statistics")').html("Oldal Statisztikái");
+
+    //BOARD MESSAGE TRANSLATION
+    $('#board-message b:contains("The error returned was:")').html("A probléma oka:");
+    $('#board-message span:contains("The Alert System is currently not enabled for this board.")').html("Az értesítési rendszert a root admin nem engedélyezte a fórumon.");
+    $('#board-message span:contains("Sorry, you do not have permission to start a topic in this forum")').html("Sajnos ebben a fórumszekcióban nincs jogosultságod új témát indítani.");
+    $('#board-message span:contains("Sorry, but we did not find any matches to display.")').html("Sajnos nem találtunk egyezést. Próbáld meg módosítani a keresési feltételeket. Ha új hozzászólások keresése közben találkoztál ezzel az üzenettel, lehetséges, hogy nincs új hozzászólás.");
+    $('#board-message b:contains("Useful Links")').html("Hasznos Linkek");
+    $('#board-message a:contains("Forgotten Password Recovery")').html("Elfelejtett jelszó visszaszerzése");
+    $('#board-message a:contains("Register a new account")').html("Új account regisztrációja");
+    $('#board-message a:contains("Our help documentation")').html("Súgó dokumentáció megnyitása");
+    $('#board-message a:contains("Contact the forums administrator")').html("Fórum adminisztrátor értesítése");
+    $('#board-message a:contains("Go Back")').html("Vissza");
+
+    //MEMBER LIST TRANSLATION
+    $('#member-list div:contains("Member List")').html("Karakterek");
+    $('#member-list th:contains("Name")').html("Név");
+    $('#member-list th:contains("Level")').html("Szint");
+    $('#member-list th:contains("Group")').html("Faj");
+    $('#member-list th:contains("Joined")').html("Regisztráció");
+    $('#member-list th:contains("Posts")').html("Hozzászólás");
+    $('#member-list th:contains("Photo")').html("Fotó");
+    $('#member-list th:contains("View")').html("Megtekintés");
+
+    //FORUMS TRANSLATION
+    $('#new-topics .topic-title-row:contains("Important Topics")').html("Fontos Témák");
+    $('#new-topics .topic-title-row:contains("Forum Topics")').html("Fórum Témák");
+    $('#new-topics .topic-title-row:contains("Announcements")').html("Hírek");
+    $('#board .button-large:contains("New Topic")').html("Új Téma");
+    $('#board .button-large:contains("New Poll")').html("Új Szavazás");
+    $('#mark-as-read-subto a:contains("Mark this forum as read")').html("Fórum olvasottnak jelölése");
+    $('#mark-as-read-subto a:contains("Subscribe to this forum")').html("Feliratkozás erre a fórumra");
+    $('#board a:contains("Attach New Poll")').html("Új szavazás készítése");
+    $('#board a:contains("Track This Topic")').html("Téma követése");
+    $('#board a:contains("Email This Topic")').html("Téma küldése emailben");
+    $('#board a:contains("Print This Topic")').html("Téma nyomtatása");
+    $('#board a:contains("Posted")').html("Elküldve:");
+    $('#board .button-small:contains("Edit")').html("Szerkesztés");
+    $('#board .button-small:contains("Quote")').html("Idézet");
+    $('#board .button-large:contains("Topic Options")').html("Téma Opciók");
+    $('#board a:contains("Next Oldest")').html("Következő korábbi");
+    $('#board a:contains("Next Newest")').html("Következő újabb");
+    $('#board .button-large:contains("Add Reply")').html("Válasz");
+    $('#board .button-large:contains("Fast Reply")').html("Gyors Válasz");
+    $('#recent-topics div:contains("Recent Topic Activity")').html("Aktív Témák");
+    $('#shoutbox div:contains("Latest Shouts In The Shoutbox")').html("Fogadó Az Akasztott Emberhez - Chat");
+
+    //QUICK REPLY TRANSLATION
+    $('#qr_open a:contains("Show Smilies Pop Up Window")').html("Emotikonok mutatása felugró ablakban");
+
+    //POSP A NEW TOPIC/REPLY TRANSLATION
+    $('#topic-settings-header td:contains("Topic Settings")').html("Téma beállításai");
+    $('#code-buttons-header td:contains("Code Buttons")').html("Kód gombok");
+    $('#enter-your-post-header td:contains("Enter your Post")').html("Hozzászólás beírása");
+    $('#upload-files-header td:contains("Upload Files")').html("Fájlok feltöltése");
+    $('#post-as-header td:contains("Post as user")').html("Hozzászólás küldése csatolt karakterrel");
+    $('#posting-form td:contains("Options")').html("Beállítások");
+    $('#topic-title .pformleft:contains("Topic Title")').html("Téma címe");
+    $('#topic-desc .pformleft:contains("Topic Description")').html("Téma leírása");
+    $('#code-buttons b:contains("Guided Mode")').html("Segítő Mód");
+    $('#code-buttons b:contains("Normal Mode")').html("Normál Mód");
+    $('#bbcode-buttons a:contains("Close all Tags")').html("TAG-ek lezárása");
+    $('#enter-your-post b:contains("Clickable Smilies")').html("Használható emotikonok");
+    $('#enter-your-post a:contains("Check Post Length")').html("Hossz ellenőrzése");
+    $('#enter-your-post a:contains("Show All")').html("Összes mutatása");
+    $('#enter-your-post a:contains("BB Code Help")').html("BBC kód segítség");
+    $('#post-icon-options b:contains("Post Icons")').html("Téma vezérikonja");
+    $('#upload-files .pformleft:contains("Attach up to 50 files to this post.")').html("Maximum 50 fájl csatolása<br /><br />Maximum fájméret: 3MB");
+    $('#post-as .pformleft:contains("Select sub-account author...")').html("Csatol karakter kiválasztása...");
+    $('#posting-form .pformleft:contains("After posting...")').html("Küldés után...");
+    $('#board .pformstrip:contains("Last 10 Posts [ In reverse order ]")').html("Utolsó 10 hozzászólás [ Fordított sorrendben ]");
+    $('#board a:contains("Review the complete topic")').html("Az egész téma átnézése (új ablakban nyílik meg)");
+
+    //REGISTRATION TRANSLATION
+    $('#board .pformstrip:contains("In order to proceed, you must agree to the following:")').html("A továbbhaladáshoz az alábbiakba bele kell egyezned:");
+    $('#board .tablepad:contains("Forum Terms & Rules:")').html("<b>Fórum felhasználási feltételei:</b><br /><br />A fórum üzemeltetői semmilyen hozzászólásért nem vállalnak felelősséget. Sem azok pontosságáért, teljességéért, hasznosságáért, vagy tartalmáért. Minden hozzászólás a beküldő/karakter nézeteit tükrözi, ezek pedig nem feltétlenül a fórum/felhasználó nézeteit tükrözik. Ha bárki úgy érzi, hogy egyes bejegyzések sértik őt, azonnal értesítheti az adminisztrátorokat. Megvan a lehetőségünk, hogy eltávolítsuk a megkérdőjelezhető üzeneteket és belátható időn belül igyekszünk orvosolni a problémákat, ha az igény jogossága beigazolódik. Beleegyezve a fórum használatába egyúttal beleegyezel abba is, hogy nem küldesz olyan hozzászólásokat, melyek tudottan hamisak, pontatlanok, bántóak, vulgárisak, gyűlölködőek, bántalmazóak, obszcének, szexuális beállítottságot mocskolóak, fenyegetőek, más privát szférájába taposóak, vagy törvénysértőek. Beleegyezel, hogy nem küldesz olyan levédett anyagot, melyet nem te, vagy ez a fórum birtokol.<br /><br /><b>Kérlek vedd figyelembe, hogy a fórum nagykorúaknak szóló játéktéri írásokat (képeket nem!) is tartalmaz.</b><br/> Ezeket az üzeneteket minden hozzászóló a megfelelő 16+, vagy 18+ karikával látja el. Ha ilyen tartalmat küldesz be, úgy azt csak a játéktéren, a karakter szemszögéből teheted és ekkor köteles vagy kitenni a megfelelő jelzést.<br/><b>16+:</b> Könnyebb káromkodás<br /><b>18+:</b> Súlyos káromkodás, szexuális tartalom, drog, erőszak..stb.<br />Kérünk mindenkit, hogy az ilyen jellegű írások mértékét racionalizálja, nyelvezetét pedig tegye emészthetővé.<br /><br /><b>Nem vállalunk felelősséget azért, hogy kiskorúak nagykorú tartalmat olvasnak, megkérünk minden fiatalt, hogy kerülje a jelzéssel ellátott hozzászólások olvasását!</b><br /><br />");
+    $('#board b:contains("I have read, understood and agree to these rules and conditions")').html("Elolvastam, megértettem és beleegyezem a felhasználási feltételekbe");
+    $('#board b:contains("Username")').html("Karakternév:");
+    $('#board b:contains("Password")').html("Jelszó:");
+    $('#board b:contains("Email Address")').html("Email cím:");
+    $('#board b:contains("Security Code Confirmation")').html("Biztonsági Kód:");
+    $('#board b:contains("Optional Information")').html("Opcionális Információk");
+    $('#board legend:contains("Receiving Email")').html("Email fogadása");
+    $('#board legend:contains("Time Zone Settings")').html("Időzóna beállítása");
+
+    //LOGIN TRANSLATION
+    $('#board a:contains("Click here!")').html("Elfelejtett jelszó visszaállítása!");
+    $('#board .pformstrip:contains("Please enter your details below to log in")').html("Kérlek add meg a belépési adataidat");
+    $('#board .pformleftw:contains("Please enter your name")').html("Karakternév megadása");
+    $('#board .pformleftw:contains("Please enter your password")').html("Jelszó megadása");
+    $('#board .pformstrip:contains("Options")').html("Beállítások");
+    $('#board .pformleftw:contains("Remember me?")').html("<b>Adatok tárolása?</b><br />Ha be van kapcsolva, a rendszer automatikusan beléptet legközelebb.<br />Több felhasználóval rendelkező gép esetén nem ajánlott!");
+    $('#board .pformleftw:contains("Privacy")').html("<b>Rejtőzködés?</b><br />Pipáld be ha nem akarod, hogy a karakterneved megjelenjen az aktív karakterek listáján.");
+
+    //THE MODERATING TEAM TRANSLATION
+    $('#board .pformstrip:contains("Member")').html("Karakter");
+    $('#board .pformstrip:contains("Group")').html("Faj");
+    $('#board .pformstrip:contains("Moderates")').html("Mod jogkör");
+    $('#board .pformstrip:contains("Location")').html("Hely");
+    $('#board .pformstrip:contains("Posts")').html("Hozzászólás");
+    $('#board .pformstrip:contains("Contact")').html("Kapcsolat");
+    $('#board th:contains("Administrators")').html("Adminisztrátorok");
+    $('#board .row4:contains("All Forums")').html("Minden fórum");
+
+    //ACTIVE TOPICS TRANSLATION
+    $('#board strong:contains("Show me active topics posted...")').html("Aktív témák az alábbi időszakból:");
+    $('#board .titlemedium:contains("Topic Title")').html("Téma címe");
+    $('#board .titlemedium:contains("Forum")').html("Fórum");
+    $('#board .titlemedium:contains("Topic Starter")').html("Téma indítója");
+    $('#board .titlemedium:contains("Replies")').html("Válasz");
+    $('#board .titlemedium:contains("Views")').html("Megtekintés");
+    $('#board .titlemedium:contains("Last Action")').html("Utolsó tevékenység");
+    $('#board .titlemedium:contains("Showing Results ( topics,   posts found)")').html("Találatok (témák, hozzászólások)");
+
+    //TOP 10 POSTERS TRANSLATION
+    $('#board .pformstrip:contains("% of todays posts")').html("%-a mai hozzászólásoknak összesen");
+
+    //ONLINE USERS TRANSLATION
+    $('#board .titlemedium:contains("Member Name")').html("Karakter neve");
+    $('#board .titlemedium:contains("Location")').html("Helyszín");
+    $('#board .titlemedium:contains("Views")').html("Megtekintés");
+
+    //CREATING A POLL TRANSLATION
+    $('#posting-form .pformstrip:contains("Poll Settings")').html("Szavazás beállításai");
+    $('#pform-poll-question strong:contains("Poll Question")').html("Szavazás témája");
+    $('#pform-poll-choices .pformleft:contains("Poll Choices")').html("<b>Szavazás választható opciói</b><br />Egy válasz soronként (max 10)<br /><br />[URL] és [IMG] kódok engedélyezve!");
+    $('#pform-poll-choices b:contains("Make Poll Only?")').html("<b>Csak szavazás?</b><br />Nem lehet válaszolni a fórumban, csak a szavazatot lehet elküldeni.");
+
+    //SEND TOPIC IN EMAIL TRANSLATION
+    $('#board .row1:contains("Send to")').html("Küldés neki (név)");
+    $('#board .row1:contains("Subject")').html("Tárgy");
+    $('#board .row1:contains("Message")').html("Üzenet");
+
+    //LAST CLICK ACTIVITY TRANSLATION
+    $('#board .row1:contains("Viewing Online List")').html("Jelenlévő felhasználók megtekintése");
+    $('#board .row1:contains("Viewing Board Index")').html("Fórum főoldalának megtekintése");
+    $('#board .row1:contains("Searching...")').html("Keresőben...");
+    $('#board .row1:contains("Viewing Stats")').html("Statisztika megtekintése");
+    $('#board .row1:contains("Viewing the Members List")').html("Karakterek megtekintése");
+    $('#board .row1:contains("Viewing the store")').html("Karakterfejlesztés megtekintése");
+    $('#board .row1:contains("Using User CP")').html("Control Panel használata");
+    $('#board .row1:contains("Using Personal Messenger")').html("Üzenetek megtekintése");
+    $('#board .row1:contains("Viewing Members Profile")').html("Karakter profil megtekintése");
+
+    //MEMBER LIST TRANSLATION
+    $('#member-list a:contains("View")').html("Megtekintés");
+
+    //OTHER MODIFICATIONS
+    //$('#new-topics .no-topics:contains("No topics were found")').html("Jelenleg nem találhatóak témák ebben a fórumban. Ha szükségesnek érzed valaminek a létrehozását, kérlek szólj az adminisztrátoroknak!");
+    $('#board .postcolor:contains("Sorry, there were no new posts")').html("Sajnos nincs új hozzászólás a legutolsó látogatásod óta.");
+    $('#board font:contains("N/A")').html("Nincs");
+    $('#new-topics .no-topics:contains("No topics were found")').remove();
+    $('#smartyhome font:contains("Üdvözöllek az oldalon,Guest")').html("Üdvözöllek az oldalon, <br />Vendég");
+
+    //AD BACKGROUND ROW4 REMOVAL
+    $('div[align=center][style=margin-bottom:3px;]:has("td.row4")').addClass('adverts').removeClass('row4');
+
+    $('.mpowers a:contains("[href="N/A"]")').remove();
+
+</script>
+
+</body>
+</html>
